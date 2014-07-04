@@ -3,7 +3,7 @@
   if ( ! defined( 'ABSPATH' ) ) exit();
 
   // Theme Options
-  // require get_template_directory() . '/includes/theme-options.php';
+  require get_template_directory() . '/includes/theme-options.php';
 
   // Initialize
   // require get_template_directory() . '/includes/initialize.php';
