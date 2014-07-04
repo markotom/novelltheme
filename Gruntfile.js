@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     less: {
       development: {
         files: {
-          'built/css/styles.css': 'assets/styles/less/novell.less'
+          'built/css/novell.css': 'assets/styles/less/novell.less'
         }
       },
       production: {
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
           cleancss: true
         },
         files: {
-          'built/css/styles.css': 'assets/styles/less/novell.less'
+          'built/css/novell.css': 'assets/styles/less/novell.less'
         }
       }
     },
