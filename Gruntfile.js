@@ -5,10 +5,29 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     // Watch task
-    watch: {},
+    watch: {
+      less: {
+        files: ['assets/styles/less/**/*.less'],
+        tasks: ['less:development']
+      }
+    },
 
     // Less task
-    less: {},
+    less: {
+      development: {
+        files: {
+          'built/css/styles.css': 'assets/styles/less/novell.less'
+        }
+      },
+      production: {
+        options: {
+          cleancss: true
+        },
+        files: {
+          'built/css/styles.css': 'assets/styles/less/novell.less'
+        }
+      }
+    },
 
     // Shell task
     shell: {
