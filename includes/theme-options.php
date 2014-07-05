@@ -97,18 +97,18 @@ function custom_theme_options() {
       // Excerpt Length
       array(
         'id' => 'novell_excerpt_length',
-        'label' => 'Excerpt Length',
-        'desc' => 'Set max number of words',
+        'label' => __( 'Excerpt Length', 'novell' ),
+        'desc' => __( 'Set max number of words', 'novell' ),
         'std' => '55',
         'type' => 'numeric-slider',
         'section' => 'general',
         'min_max_step' => '0,100,1'
       ),
 
-      //
+      // Social Links
       array(
         'id' => 'novell_social_links',
-        'label' => __( 'Social Links', 'option-tree-theme' ),
+        'label' => __( 'Social Links', 'novell' ),
         'desc' => __( 'Create and organize your social links', 'novell' ),
         'std' => '',
         'type' => 'social-links',
