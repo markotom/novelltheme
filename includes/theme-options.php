@@ -19,7 +19,7 @@ add_filter( 'ot_theme_mode', '__return_true' );
 // Load template
 require get_template_directory() . '/option-tree/ot-loader.php';
 
-/*
+/**
  * -----------------------------------------------------------------------------
  * Theme Options
  * -----------------------------------------------------------------------------
@@ -40,10 +40,12 @@ function custom_theme_options() {
 
   // Set custom settings
   $custom_settings = array(
+
+    // Contextual help
     'contextual_help' => array(
       'content' => array(
         array(
-          'id' => 'general_help',
+          'id' => 'information',
           'title' => __( 'Information', 'novell' ),
           'content' => '
             <h1>Novell Theme</h1>
@@ -58,7 +60,89 @@ function custom_theme_options() {
         )
       )
     ),
+
+    // Sections
+    'sections' => array(
+      array(
+        'id' => 'general',
+        'title' => __( 'General', 'novell' )
+      ),
+      array(
+        'id' => 'social-links',
+        'title' => __( 'Social links', 'novell' )
+      )
+    ),
+
+    // Settings
+    'settings' => array(
+
+      // Heading Text
+      array(
+        'id' => 'novell_heading_text',
+        'label' => __( 'Heading Text', 'novell' ),
+        'desc' => __( 'Shows this heading text instead site description', 'novell' ),
+        'type' => 'text',
+        'section' => 'general',
+      ),
+
+      // Featured Category
+      array(
+        'id' => 'novell_featured_category',
+        'label' => __( 'Featured Category', 'novell' ),
+        'desc' => __( 'Shows posts from this category instead all posts from all categories', 'novell' ),
+        'type' => 'category-select',
+        'section' => 'general',
+      ),
+
+      // Excerpt Length
+      array(
+        'id' => 'novell_excerpt_length',
+        'label' => 'Excerpt Length',
+        'desc' => 'Set max number of words',
+        'std' => '55',
+        'type' => 'numeric-slider',
+        'section' => 'general',
+        'min_max_step' => '0,100,1'
+      ),
+
+      //
+      array(
+        'id' => 'novell_social_links',
+        'label' => __( 'Social Links', 'option-tree-theme' ),
+        'desc' => __( 'Create and organize your social links', 'novell' ),
+        'std' => '',
+        'type' => 'social-links',
+        'section' => 'social-links'
+      ),
+    )
+
   );
+
+  // Default social links
+  add_action( 'ot_type_social_links_defaults', function () {
+    return array(
+      array(
+          'name'    => __( 'Facebook', 'option-tree' ),
+          'title'   => '',
+          'href'    => ''
+      ),
+      array(
+        'name'    => __( 'Twitter', 'option-tree' ),
+        'title'   => '',
+        'href'    => ''
+      ),
+      array(
+        'name'    => __( 'Google+', 'option-tree' ),
+        'title'   => '',
+        'href'    => ''
+      ),
+      array(
+        'name'    => __( 'Youtube', 'option-tree' ),
+        'title'   => '',
+        'href'    => ''
+      )
+    );
+  });
 
   // Save custom settings if are not the same
   if ( $saved_settings !== $custom_settings ) {
