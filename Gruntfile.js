@@ -6,6 +6,15 @@ module.exports = function (grunt) {
 
     // Watch task
     watch: {
+      livereload: {
+        files: [
+          '**/*.php',
+          'built/**/*'
+        ],
+        options: {
+          livereload: true
+        }
+      },
       less: {
         files: ['assets/styles/less/**/*.less'],
         tasks: ['less:development']
