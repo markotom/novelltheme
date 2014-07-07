@@ -8,9 +8,7 @@ module.exports = function (grunt) {
     watch: {
       php: {
         files: '**/*.php',
-        tasks: 'phplint:all',
         options: {
-          spawn: false,
           livereload: true
         }
       },
