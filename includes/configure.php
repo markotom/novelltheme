@@ -19,6 +19,9 @@ function novell_configure_theme() {
   // Head cleanup
   add_action( 'init', 'novell_head_cleanup' );
 
+  // Enqueue assets
+  add_action( 'wp_enqueue_scripts', 'novell_enqueue_assets' );
+
 }
 
 // Theme support
@@ -55,6 +58,34 @@ function novell_head_cleanup() {
 
   // WP version
   remove_action( 'wp_head', 'wp_generator' );
+
+}
+
+// Enqueue assets
+function novell_enqueue_assets() {
+
+  if ( ! is_admin () ) {
+
+    // Asset path format
+    $asset_path = get_stylesheet_directory_uri() . '/built/%2$s/%1$s.%2$s';
+
+    // Register main styles
+    wp_register_style( 'novell_styles', sprintf( $asset_path, 'novell', 'css' ) );
+
+    // Enqueue main styles
+    wp_enqueue_style( 'novell_styles' );
+
+    // Register bootstrap scripts
+    wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), false, true );
+    // Register novell scripts
+    // wp_register_script( 'novell_scripts', sprintf( $asset_path, 'novell.min', 'js' ) );
+
+    // Enqueue bootstrap scripts
+    wp_enqueue_script( 'bootstrap' );
+    // Enqueue novell scripts
+    // wp_enqueue_script( 'novell_scripts' );
+
+  }
 
 }
 

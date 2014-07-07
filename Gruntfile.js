@@ -6,18 +6,19 @@ module.exports = function (grunt) {
 
     // Watch task
     watch: {
-      livereload: {
-        files: [
-          '**/*.php',
-          'built/**/*'
-        ],
+      php: {
+        files: '**/*.php',
         options: {
           livereload: true
         }
       },
       less: {
-        files: ['assets/styles/less/**/*.less'],
-        tasks: ['less:development']
+        files: 'assets/styles/less/**/*.less',
+        tasks: 'less:development',
+        options: {
+          spawn: false,
+          livereload: true
+        }
       }
     },
 
