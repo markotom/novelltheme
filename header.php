@@ -17,3 +17,13 @@
   <?php wp_head(); ?>
 </head>
 <body>
+  <!-- #header -->
+  <div id="header">
+    <!-- .container -->
+    <div class="container">
+      Header and so on
+    </div><!-- /.container -->
+  </div><!-- /#header -->
+
+  <!-- #content -->
+  <div id="content">
