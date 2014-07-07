@@ -8,7 +8,9 @@ module.exports = function (grunt) {
     watch: {
       php: {
         files: '**/*.php',
+        tasks: 'phplint:all',
         options: {
+          spawn: false,
           livereload: true
         }
       },
@@ -20,6 +22,18 @@ module.exports = function (grunt) {
           livereload: true
         }
       }
+    },
+
+    phplint: {
+      options: {
+        swapPath: '/tmp'
+      },
+      all: [
+        '**/*.php',
+        '!node_modules/**/*',
+        '!bower_components/**/*',
+        '!option-tree/**/*'
+      ]
     },
 
     // Less task
@@ -55,6 +69,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-phplint');
 
   // Build task
   grunt.registerTask('build', ['shell:optiontree']);
