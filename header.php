@@ -59,13 +59,12 @@
       <div class="container">
         <?php
 
+          // Shows main nav menu
           wp_nav_menu(
             array(
-              'theme_location' => 'main',
-              'menu_class' => 'nav navbar-nav',
-              'container' => '',
-              'menu_id' => '',
-              'fallback_cb' => false
+              'theme_location'  => 'main',
+              'menu_class'      => 'nav navbar-nav',
+              'container'       => false
             )
           );
 
