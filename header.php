@@ -21,7 +21,25 @@
   <div id="header">
     <!-- .container -->
     <div class="container">
-      Header and so on
+      <?php if ( ot_get_option( 'novell_logo' ) ) : ?>
+      <div class="site-logo">
+        <a href="<?php echo home_url() ; ?>">
+          <img src="<?php echo ot_get_option( 'novell_logo' ) ?>" alt="">
+        </a>
+      </div>
+      <?php elseif ( ot_get_option( 'novell_heading_text' ) ) : ?>
+      <h1 class="site-name">
+        <a href="<?php echo home_url() ; ?>">
+          <?php echo ot_get_option( 'novell_heading_text' ) ?>
+        </a>
+      </h1>
+      <?php else : ?>
+      <h1 class="site-name">
+        <a href="<?php echo home_url() ; ?>">
+          <?php bloginfo( 'sitename' ) ?>
+        </a>
+      </h1>
+      <?php endif ?>
     </div><!-- /.container -->
   </div><!-- /#header -->
 
