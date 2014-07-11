@@ -80,9 +80,19 @@ function custom_theme_options() {
       array(
         'id' => 'novell_heading_text',
         'label' => __( 'Heading Text', 'novell' ),
-        'desc' => __( 'Shows this heading text instead site description', 'novell' ),
+        'desc' => __( 'Shows heading text instead site description', 'novell' ),
         'type' => 'text',
         'section' => 'general',
+      ),
+
+      // Logo
+      array(
+        'id'          => 'novell_logo',
+        'label'       => __( 'Logo', 'novell' ),
+        'desc'        => __( 'Upload your own logo. If you don\'t upload the logo, your heading text or site description will be displayed instead' ),
+        'std'         => '',
+        'type'        => 'upload',
+        'section'     => 'general'
       ),
 
       // Featured Category
