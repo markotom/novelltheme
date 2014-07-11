@@ -9,6 +9,6 @@
   require get_template_directory() . '/includes/configure.php';
 
   // Navigation
-  // require get_template_directory() . '/includes/navigation.php';
+  require get_template_directory() . '/includes/navigation.php';
 
 ?>

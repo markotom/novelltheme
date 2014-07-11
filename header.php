@@ -55,6 +55,24 @@
 
     </div><!-- /.container -->
 
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <?php
+
+          wp_nav_menu(
+            array(
+              'theme_location' => 'main',
+              'menu_class' => 'nav navbar-nav',
+              'container' => '',
+              'menu_id' => '',
+              'fallback_cb' => false
+            )
+          );
+
+        ?>
+      </div>
+    </nav>
+
   </div><!-- /#header -->
 
   <!-- #content -->
