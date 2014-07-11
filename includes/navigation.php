@@ -77,7 +77,11 @@ class Novell_Nav_Menu extends Walker_Nav_Menu {
       $element->is_dropdown = ! empty( $children_elements[ $element->ID ] );
 
       if ( $element->is_dropdown ) {
-        $element->classes[] = 'dropdown';
+        if ( $depth === 0 ) {
+          $element->classes[] = 'dropdown';
+        } elseif ( $depth === 1 ) {
+          $element->classes[] = 'dropdown-submenu';
+        }
       }
 
       parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
