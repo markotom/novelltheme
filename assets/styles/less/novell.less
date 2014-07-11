@@ -25,3 +25,9 @@ body {
     padding-bottom: @line-height-computed;
   }
 }
+
+.navbar-nav {
+  > .current-menu-item {
+    &:extend(.navbar-nav > .active all);
+  }
+}
