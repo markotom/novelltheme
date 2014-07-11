@@ -89,7 +89,7 @@ function custom_theme_options() {
       array(
         'id'          => 'novell_logo',
         'label'       => __( 'Logo', 'novell' ),
-        'desc'        => __( 'Upload your own logo. If you don\'t upload the logo, your heading text or site description will be displayed instead' ),
+        'desc'        => __( 'Upload your own logo. If you don\'t upload the logo, your heading text or site description will be displayed instead', 'novell' ),
         'std'         => '',
         'type'        => 'upload',
         'section'     => 'general'
