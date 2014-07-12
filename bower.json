@@ -6,7 +6,7 @@
     "Marco Godínez <markotom@gmail.com>"
   ],
   "description": "Novell Wordpress Theme",
-  "license": "ISC",
+  "license": "GPLv2 or later",
   "private": true,
   "dependencies": {
     "bootstrap": "~3.2.0"
