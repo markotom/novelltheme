@@ -11,4 +11,7 @@
   // Navigation
   require get_template_directory() . '/includes/navigation.php';
 
+  // Sidebars
+  require get_template_directory() . '/includes/sidebars.php';
+
 ?>
