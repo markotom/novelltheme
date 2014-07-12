@@ -30,6 +30,9 @@ function novell_theme_support() {
   // Add menus support
   add_theme_support( 'menus' );
 
+  // Add automatic feed links
+  add_theme_support( 'automatic-feed-links' );
+
   // Add post thumbnails support
   add_theme_support( 'post-thumbnails' );
 
