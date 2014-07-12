@@ -1,5 +1,13 @@
   </div><!-- /#content -->
 
+  <!-- #bottom -->
+  <div id="bottom">
+    <!-- .container -->
+    <div class="container">
+      <?php get_sidebar( 'bottom' ); ?>
+    </div><!-- /.container -->
+  </div><!-- /#bottom -->
+
   <!-- #footer -->
   <div id="footer">
     <!-- .container -->
