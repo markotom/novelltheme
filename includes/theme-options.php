@@ -131,7 +131,7 @@ function custom_theme_options() {
 
       array(
         'id'          => 'novell-layout-global',
-        'label'       => __( 'Layout Global', 'novell' ),
+        'label'       => __( 'Global layout', 'novell' ),
         'desc'        => __( 'Define your global layout', 'novell' ),
         'std'         => 'col-3-middle',
         'type'        => 'radio-image',
