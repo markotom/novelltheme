@@ -143,12 +143,12 @@ function custom_theme_options() {
             'src'       => get_template_directory_uri() . '/assets/images/layouts/col-1-full.gif'
           ),
           array(
-            'value'     => 'col-3-right',
+            'value'     => 'col-2-right',
             'label'     => '2 Column Right',
             'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-right.gif'
           ),
           array(
-            'value'     => 'col-3-left',
+            'value'     => 'col-2-left',
             'label'     => '2 Column Left',
             'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-left.gif'
           ),
