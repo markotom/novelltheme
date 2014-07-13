@@ -74,5 +74,5 @@
 
   </div><!-- /#header -->
 
-  <!-- #content -->
-  <div id="content">
+  <!-- #main -->
+  <div id="main">

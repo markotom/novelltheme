@@ -1,4 +1,4 @@
-  </div><!-- /#content -->
+  </div><!-- /#main -->
 
   <!-- #bottom -->
   <div id="bottom">
