@@ -1,59 +1,49 @@
 <?php get_header(); ?>
-<hr>
 
+<?php
+  // Get global layout
+  $column_global_layout = ot_get_option( 'novell-layout-global' );
+?>
+
+<!-- .container -->
 <div class="container">
-  <div class="col-1-full">
-    <div class="content">Content</div>
-  </div>
-</div>
 
-<hr>
+  <!-- .col-(3|2|1)-(left|right|full) -->
+  <div class="<?php echo $column_global_layout; ?>">
 
-<div class="container">
-  <div class="col-2-right">
-    <div class="content">Content</div>
-    <div class="sidebar-1">Sidebar 1</div>
-  </div>
-</div>
+    <!-- .content -->
+    <div class="content" role="main">
+      Main content
+    </div><!-- /.content -->
 
-<hr>
+    <?php
+      // Hide main sidebar if specified full column
+      if (  $column_global_layout !== 'col-1-full' ) :
+    ?>
 
-<div class="container">
-  <div class="col-2-left">
-    <div class="content">Content</div>
-    <div class="sidebar-1">Sidebar 1</div>
-  </div>
-</div>
+    <!-- .sidebar.sidebar-main -->
+    <div class="sidebar sidebar-main" role="complementary">
+      Sidebar 1
+    </div><!-- /.sidebar.sidebar-main -->
 
-<hr>
+    <?php endif; ?>
 
-<div class="container">
-  <div class="col-3-middle">
-    <div class="content">Content</div>
-    <div class="sidebar-1">Sidebar 1</div>
-    <div class="sidebar-2">Sidebar 2</div>
-  </div>
-</div>
+    <?php
+      // Show secondary sidebar if specified three columns
+      if (  $column_global_layout === 'col-3-middle' ||
+            $column_global_layout === 'col-3-right' ||
+            $column_global_layout === 'col-3-left'   ) :
+    ?>
 
-<hr>
+    <!-- .sidebar.sidebar-secondary -->
+    <div class="sidebar sidebar-secondary" role="complementary">
+      Sidebar 2
+    </div><!-- /.sidebar.sidebar-secondary -->
 
-<div class="container">
-  <div class="col-3-right">
-    <div class="content">Content</div>
-    <div class="sidebar-1">Sidebar 1</div>
-    <div class="sidebar-2">Sidebar 2</div>
-  </div>
-</div>
+    <?php endif; ?>
 
-<hr>
+  </div><!-- /.col-(3|2|1)-(left|right|full) -->
 
-<div class="container">
-  <div class="col-3-left">
-    <div class="content">Content</div>
-    <div class="sidebar-1">Sidebar 1</div>
-    <div class="sidebar-2">Sidebar 2</div>
-  </div>
-</div>
+</div><!-- /.container -->
 
-<hr>
 <?php get_footer(); ?>
