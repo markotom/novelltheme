@@ -68,6 +68,10 @@ function custom_theme_options() {
         'title' => __( 'General', 'novell' )
       ),
       array(
+        'id' => 'layout',
+        'title' => __( 'Layout', 'novell' )
+      ),
+      array(
         'id' => 'social-links',
         'title' => __( 'Social links', 'novell' )
       )
@@ -124,6 +128,47 @@ function custom_theme_options() {
         'type' => 'social-links',
         'section' => 'social-links'
       ),
+
+      array(
+        'id'          => 'novell-layout-global',
+        'label'       => __( 'Layout Global', 'novell' ),
+        'desc'        => __( 'Define your global layout', 'novell' ),
+        'std'         => 'col-3-middle',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => array(
+          array(
+            'value'     => 'col-1-full',
+            'label'     => '1 Column Full',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-1-full.gif'
+          ),
+          array(
+            'value'     => 'col-3-right',
+            'label'     => '2 Column Right',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-right.gif'
+          ),
+          array(
+            'value'     => 'col-3-left',
+            'label'     => '2 Column Left',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-left.gif'
+          ),
+          array(
+            'value'     => 'col-3-middle',
+            'label'     => '3 Column Middle',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-middle.gif'
+          ),
+          array(
+            'value'     => 'col-3-right',
+            'label'     => '3 Column Right',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-right.gif'
+          ),
+          array(
+            'value'     => 'col-3-left',
+            'label'     => '3 Column Left',
+            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-left.gif'
+          )
+        )
+      )
     )
 
   );
