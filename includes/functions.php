@@ -7,6 +7,16 @@
  *
  */
 
+function novell_page_title() {
+  if ( is_search() ) {
+    $page_title = __( 'Nothing Found', 'novell' );
+  }
+
+  if ( $page_title ) {
+    echo '<h1 class="page-title">' . $page_title . '</h1>';
+  }
+}
+
 function novell_global_layout() {
   // Get global layout
   $column_global_layout = ot_get_option( 'novell-layout-global' );
