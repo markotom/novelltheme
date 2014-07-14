@@ -19,15 +19,15 @@
           // Start the loop
           while ( have_posts() ) : the_post();
 
-            // Get template by post format
-            get_template_part( 'content', get_post_format() );
+            // Get template content
+            get_template_part( 'templates/content' );
 
           endwhile;
 
         else :
 
           // Get "No post found" template
-          get_template_part( 'content', 'none' );
+          get_template_part( 'templates/content', 'none' );
 
         endif;
       ?>
