@@ -15,6 +15,11 @@
           // Get template content
           get_template_part( 'templates/content' );
 
+          // If comments are open or if post has at least one comment
+          if ( comments_open() || get_comments_number() ) {
+            comments_template();
+          }
+
         endwhile;
       ?>
     </div><!-- /.content -->
