@@ -13,7 +13,24 @@
 
     <!-- .content -->
     <div class="content" role="main">
-      Main content
+      <?php
+        if ( have_posts() ) :
+
+          // Start the loop
+          while ( have_posts() ) : the_post();
+
+            // Get template by post format
+            get_template_part( 'content', get_post_format() );
+
+          endwhile;
+
+        else :
+
+          // Get "No post found" template
+          get_template_part( 'content', 'none' );
+
+        endif;
+      ?>
     </div><!-- /.content -->
 
     <?php
@@ -24,9 +41,7 @@
         get_sidebar( 'main' );
 
       endif;
-    ?>
 
-    <?php
       // Show secondary sidebar if specified three columns
       if (  $column_global_layout === 'col-3-middle' ||
             $column_global_layout === 'col-3-right' ||
