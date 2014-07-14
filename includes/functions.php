@@ -8,11 +8,11 @@
  */
 
 function novell_page_title() {
-  if ( is_search() ) {
+  if ( is_search() || is_404() ) {
     $page_title = __( 'Nothing Found', 'novell' );
   }
 
-  if ( $page_title ) {
+  if ( isset( $page_title ) ) {
     echo '<h1 class="page-title">' . $page_title . '</h1>';
   }
 }
