@@ -17,4 +17,7 @@
   // Sidebars
   require get_template_directory() . '/includes/sidebars.php';
 
+  // Functions
+  require get_template_directory() . '/includes/functions.php';
+
 ?>
