@@ -37,7 +37,10 @@
       <?php if ( comments_open() || get_comments_number() ) : ?>
       <!-- .entry-meta-comments -->
       <div class="entry-meta-comments">
-        <?php comments_popup_link( null, __( '1 Comment' ), __( '% Comments' ) ); ?>
+        <?php
+          $comment_icon = '<span class="glyphicon glyphicon-comment"></span> ';
+          comments_popup_link( null, $comment_icon . __( '1 Comment' ), $comment_icon . __( '% Comments' ) );
+        ?>
       </div><!-- /.entry-meta-comments -->
       <?php endif; ?>
     </div><!-- /.entry-meta -->
