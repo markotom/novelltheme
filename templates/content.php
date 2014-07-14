@@ -46,10 +46,17 @@
     </div><!-- /.entry-meta -->
   </header><!-- /.entry-header -->
 
+  <?php if ( is_single() ) : ?>
+  <!-- .entry-content -->
+  <div class="entry-content">
+    <?php the_content(); ?>
+  </div><!-- /.entry-content -->
+  <?php else : ?>
   <!-- .entry-summary -->
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div><!-- /.entry-summary -->
+  <?php endif; ?>
 
   <!-- .entry-meta -->
   <footer class="entry-meta">
