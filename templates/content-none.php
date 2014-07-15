@@ -1,5 +1,5 @@
 <header class="page-header">
-  <?php novell_page_title(); ?>
+  <h1 class="page-title"><?php _e( 'Nothing Found', 'novell' ); ?></h1>
 </header>
 
 <div class="page-content">

@@ -7,16 +7,6 @@
  *
  */
 
-function novell_page_title() {
-  if ( is_search() || is_404() ) {
-    $page_title = __( 'Nothing Found', 'novell' );
-  }
-
-  if ( isset( $page_title ) ) {
-    echo '<h1 class="page-title">' . $page_title . '</h1>';
-  }
-}
-
 function novell_global_layout() {
   // Get global layout
   $column_global_layout = ot_get_option( 'novell-layout-global' );
@@ -47,6 +37,20 @@ function novell_secondary_sidebar() {
 
     // Get secondary sidebar
     get_sidebar( 'secondary' );
+
+  endif;
+}
+
+function novell_pagination() {
+  // Please, use WP-PageNavi plugin
+  if ( function_exists( "wp_pagenavi" ) ) :
+    wp_pagenavi();
+  else:
+    echo '<ul class="pager"><li class="previous">';
+      previous_posts_link();
+    echo '</li><li class="next right">';
+      next_posts_link();
+    echo ' </li></ul>';
 
   endif;
 }
