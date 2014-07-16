@@ -72,9 +72,13 @@ function novell_enqueue_assets() {
     // Asset path format
     $asset_path = get_stylesheet_directory_uri() . '/built/%2$s/%1$s.%2$s';
 
+    // Register "Open Sans" webfont
+    wp_register_style( 'novell_webfont', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,700,400,600' );
     // Register main styles
     wp_register_style( 'novell_styles', sprintf( $asset_path, 'novell', 'css' ) );
 
+    // Enqueue "Open Sans" webfont
+    wp_enqueue_style( 'novell_webfont' );
     // Enqueue main styles
     wp_enqueue_style( 'novell_styles' );
 
