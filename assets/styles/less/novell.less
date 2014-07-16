@@ -1,11 +1,16 @@
 // Bootstrap
 @import 'bower_components/bootstrap/less/bootstrap.less';
 
-// Custom Variables
+// Core variables and mixins
 @import 'variables.less';
 
-// Wordpress core
+// Core CSS
+@import 'grid.less';
 @import 'wordpress.less';
+
+// Components
+@import 'dropdowns.less';
+@import 'navbar.less';
 
 
 html {
@@ -26,113 +31,5 @@ body {
   .container {
     padding-top: @line-height-computed;
     padding-bottom: @line-height-computed;
-  }
-}
-
-.navbar-nav {
-  > .current-menu-item {
-    &:extend(.navbar-nav > .active all);
-  }
-}
-
-// Dropdown multilevel (was removed by Bootstrap 3)
-.dropdown-submenu {
-  position: relative;
-  &>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-  }
-  &:hover {
-    &>.dropdown-menu {
-      display: block;
-    }
-  }
-  &>a:after {
-    &:extend(.caret);
-    float: right;
-    display: block;
-    content: " ";
-    border-top:   @caret-width-base solid transparent;
-    border-left:  @caret-width-base solid;
-    border-bottom: @caret-width-base solid transparent;
-    margin: 6px -10px 0 4px;
-  }
-  .pull-left {
-    float: none;
-    &>.dropdown-menu {
-      left: -100%;
-      margin-left: 10px;
-      border-radius: 6px 0 6px 6px;
-    }
-  }
-}
-
-.col-1-full { }
-
-.col-2-right {
-  .row;
-  .content {
-    .make-sm-column(8);
-    .make-sm-column-push(4);
-  }
-  .sidebar-main {
-    .make-sm-column(4);
-    .make-sm-column-pull(8);
-  }
-}
-
-.col-2-left {
-  .row;
-  .content {
-    .make-sm-column(8);
-  }
-  .sidebar-main {
-    .make-sm-column(4);
-  }
-}
-
-.col-3-middle {
-  .row;
-  .content {
-    .make-sm-column(6);
-    .make-sm-column-push(3);
-  }
-  .sidebar-main {
-    .make-sm-column(3);
-    .make-sm-column-pull(6);
-  }
-  .sidebar-secondary {
-    .make-sm-column(3);
-  }
-}
-
-.col-3-right {
-  .row;
-  .content {
-    .make-sm-column(6);
-    .make-sm-column-push(6);
-  }
-  .sidebar-main {
-    .make-sm-column(3);
-    .make-sm-column-pull(6);
-  }
-  .sidebar-secondary {
-    .make-sm-column(3);
-    .make-sm-column-pull(6);
-  }
-}
-
-.col-3-left {
-  .row;
-  .content {
-    .make-sm-column(6);
-  }
-  .sidebar-main {
-    .make-sm-column(3);
-  }
-  .sidebar-secondary {
-    .make-sm-column(3);
   }
 }
