@@ -23,6 +23,9 @@
           <?php _ex( 'Category', 'taxonomy singular name' ); ?>: <?php single_cat_title(); ?>
         <?php elseif ( is_tag() ) : ?>
           <?php _ex( 'Tag', 'taxonomy singular name' ); ?>: <?php single_tag_title(); ?>
+        <?php elseif ( is_author() ) : ?>
+          <?php $author = get_userdata( get_query_var('author') );?>
+          <span class="glyphicon glyphicon-user"></span> <?php _e( 'Author' ); ?>: <?php echo $author->display_name;?>
         <?php else : ?>
           <?php the_title(); ?>
         <?php endif; ?>
