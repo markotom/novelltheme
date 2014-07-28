@@ -55,8 +55,8 @@
 
     </div><!-- /.container -->
 
-    <!-- .navbar.navbar-default -->
-    <nav class="navbar navbar-default" role="navigation">
+    <!-- #navbar-main.navbar.navbar-default -->
+    <nav id="navbar-main" class="navbar navbar-inverse" role="navigation">
       <!-- .container -->
       <div class="container">
         <!-- .navbar-header -->
@@ -83,7 +83,7 @@
 
         ?>
       </div><!-- /.container -->
-    </nav><!-- /.navbar.navbar-default -->
+    </nav><!-- /#navbar-main.navbar.navbar-default -->
 
   </div><!-- /#header -->
 

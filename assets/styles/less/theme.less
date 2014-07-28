@@ -1,0 +1,36 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: @line-height-computed * 3;
+}
+
+#header {
+  background-color: @brand-primary;
+}
+
+.site-logo,
+.site-name {
+  .text-center;
+
+  margin: @line-height-computed;
+
+  a {
+    color: @btn-primary-color;
+  }
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: @line-height-computed * 3;
+  background-color: @gray-lighter;
+
+  .container {
+    padding-top: @line-height-computed;
+    padding-bottom: @line-height-computed;
+  }
+}
