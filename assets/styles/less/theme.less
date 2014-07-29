@@ -6,11 +6,21 @@ html {
 body {
   padding-top: @navbar-height;
   margin-bottom: @line-height-computed * 3;
+
+  @media (min-width: @grid-float-breakpoint) {
+    padding-top: 0;
+  }
 }
 
 #header {
   background-color: @brand-primary;
   margin-bottom: @line-height-computed;
+}
+
+#navbar-main {
+  @media (min-width: @grid-float-breakpoint) {
+    position: static;
+  }
 }
 
 .site-logo,
