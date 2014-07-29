@@ -14,7 +14,6 @@ body {
 
 #header {
   background-color: @brand-primary;
-  margin-bottom: @line-height-computed;
 }
 
 #navbar-main {
@@ -22,6 +21,12 @@ body {
     z-index: @zindex-navbar;
     position: relative;
   }
+}
+
+.carousel-home {
+  margin-right:  -(@grid-gutter-width / 2);
+  margin-left:   -(@grid-gutter-width / 2);
+  margin-bottom: @line-height-computed;
 }
 
 .site-logo,

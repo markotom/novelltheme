@@ -9,6 +9,15 @@
     <!-- .content -->
     <div class="content" role="main">
       <?php
+
+        if ( is_home() ) :
+
+          // Carousel
+          get_template_part( 'templates/carousel' );
+
+        endif;
+
+
         if ( have_posts() ) :
 
           // Start the loop

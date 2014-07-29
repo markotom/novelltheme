@@ -3,7 +3,7 @@
 
   <!-- .entry-header -->
   <header class="entry-header">
-    <h1 class="entry-title"><?php the_title(); ?></h1>
+    <h1 class="h3 entry-title"><?php the_title(); ?></h1>
   </header><!-- /.entry-header -->
 
   <!-- .entry-content -->
