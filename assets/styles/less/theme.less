@@ -47,16 +47,16 @@ body {
 // --------------------------------------------------
 
 .content > article {
-  padding-bottom: @line-height-computed / 3;
+  padding-bottom: @line-height-computed / 2;
 }
 
 .content > article + article {
-  padding-top: @line-height-computed / 2;
+  padding-top: @line-height-computed;
   border-top: 1px solid @gray-lighter;
 }
 
 .entry-title + .entry-meta {
-  .clearfix;
+  &:extend(.clearfix all);
 
   margin: @line-height-computed / 2 0;
   border: 1px solid @well-border;
