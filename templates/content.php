@@ -5,13 +5,13 @@
   <header class="entry-header">
     <!-- .entry-meta -->
     <div class="entry-meta">
-      <span class="entry-meta-categories"><?php the_category(', '); ?></span>
+      <span class="entry-meta-categories"><?php the_category(' '); ?></span>
     </div><!-- /.entry-meta -->
 
     <?php if ( is_single() ) : ?>
-    <h1 class="entry-title"><?php the_title(); ?></h1>
+    <h1 class="h3 entry-title"><?php the_title(); ?></h1>
     <?php else : ?>
-    <h1 class="entry-title">
+    <h1 class="h4 entry-title">
       <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
     </h1>
     <?php endif; ?>
@@ -34,7 +34,7 @@
         </a>
       </div><!-- /.entry-meta-date -->
 
-      <?php if ( comments_open() || get_comments_number() ) : ?>
+      <?php if ( comments_open() && get_comments_number() && ! post_password_required() ) : ?>
       <!-- .entry-meta-comments -->
       <div class="entry-meta-comments">
         <?php

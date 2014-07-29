@@ -19,6 +19,7 @@ body {
 
   a {
     color: @btn-primary-color;
+    text-decoration: none;
   }
 }
 
@@ -30,7 +31,76 @@ body {
   background-color: @gray-lighter;
 
   .container {
+    .text-center;
+
     padding-top: @line-height-computed;
     padding-bottom: @line-height-computed;
   }
+}
+
+.page-title {
+  .h3;
+}
+
+//
+// Posts
+// --------------------------------------------------
+
+.content > article {
+  padding-bottom: @line-height-computed / 3;
+}
+
+.content > article + article {
+  padding-top: @line-height-computed / 2;
+  border-top: 1px solid @gray-lighter;
+}
+
+.entry-title + .entry-meta {
+  .clearfix;
+
+  margin: @line-height-computed / 2 0;
+  border: 1px solid @well-border;
+  border-radius: @border-radius-base;
+
+  div + div {
+    border-left: 1px solid @well-border;
+  }
+}
+
+.entry-meta-author,
+.entry-meta-date,
+.entry-meta-comments {
+  .text-center;
+  &:extend(small);
+
+  padding: 5px 10px;
+}
+
+.entry-meta-author,
+.entry-meta-date {
+  .pull-left;
+  width: 50%;
+}
+
+.entry-meta-comments {
+  clear: both;
+  border-top: 1px solid @well-border;
+}
+
+.entry-meta-categories {
+  a {
+    .label;
+    .label-default;
+
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+//
+// Sidebars
+// --------------------------------------------------
+
+.sidebar {
+  .sr-only;
 }
