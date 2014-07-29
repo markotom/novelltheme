@@ -29,7 +29,7 @@
       <!-- .site-logo -->
       <div class="site-logo">
         <a href="<?php echo home_url() ; ?>" rel="home">
-          <img src="<?php echo ot_get_option( 'novell_logo' ) ?>" alt="">
+          <img src="<?php echo ot_get_option( 'novell_logo' ) ?>" alt="<?php bloginfo( 'sitename' ) ?>">
         </a>
       </div><!-- /.site-logo -->
 
