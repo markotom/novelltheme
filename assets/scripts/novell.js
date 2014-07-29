@@ -1,7 +1,6 @@
 jQuery(document).ready(function ($) {
 
-  $('.site-logo img').each(function () {
-    $(this).width($(this).width() / 2);
-  });
+  var site_logo = $('.site-logo a img');
+  site_logo.width(site_logo.width() / 2);
 
 });
