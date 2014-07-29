@@ -74,10 +74,11 @@
           // Shows main nav menu
           wp_nav_menu(
             array(
+              'depth'           => 3,
               'theme_location'  => 'main',
               'menu_class'      => 'nav navbar-nav',
               'container_class' => 'collapse navbar-collapse',
-              'container_id'    => 'navbar-collapse-1',
+              'container_id'    => 'navbar-collapse-1'
             )
           );
 

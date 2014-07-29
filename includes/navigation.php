@@ -58,7 +58,7 @@ class Novell_Nav_Menu extends Walker_Nav_Menu {
       parent::start_el( $item_html, $item, $depth, $args );
 
       // Add classes and data attributes to support dropdown menus
-      if ( $item->is_dropdown && ( $depth === 0 ) ) {
+      if ( $item->is_dropdown && $depth <= 1 ) {
         $item_html = str_replace( '<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html );
         $item_html = str_replace( '</a>', ' <b class="caret"></b></a>', $item_html );
       }
