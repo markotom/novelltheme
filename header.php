@@ -56,7 +56,7 @@
     </div><!-- /.container -->
 
     <!-- #navbar-main.navbar.navbar-default -->
-    <nav id="navbar-main" class="navbar navbar-inverse" role="navigation">
+    <nav id="navbar-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <!-- .container -->
       <div class="container">
         <!-- .navbar-header -->
