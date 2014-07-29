@@ -19,6 +19,14 @@ module.exports = function (grunt) {
           spawn: false,
           livereload: true
         }
+      },
+      uglify: {
+        files: [ 'assets/scripts/**/*.js' ],
+        tasks: [ 'uglify' ],
+        options: {
+          spawn: false,
+          livereload: true
+        }
       }
     },
 
@@ -51,6 +59,15 @@ module.exports = function (grunt) {
       }
     },
 
+    // Uglify task
+    uglify: {
+      production: {
+        files: {
+          'built/js/novell.min.js': 'assets/scripts/novell.js'
+        }
+      }
+    },
+
     // Shell task
     shell: {
       optiontree: {
@@ -66,6 +83,7 @@ module.exports = function (grunt) {
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-phplint');
 
