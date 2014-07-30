@@ -72,6 +72,10 @@ function custom_theme_options() {
         'title' => __( 'Layout', 'novell' )
       ),
       array(
+        'id' => 'carousel',
+        'title' => __( 'Carousel', 'novell' )
+      ),
+      array(
         'id' => 'social-links',
         'title' => __( 'Social links', 'novell' )
       )
@@ -166,6 +170,35 @@ function custom_theme_options() {
             'value'     => 'col-3-left',
             'label'     => '3 Column Left',
             'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-left.gif'
+          )
+        )
+      ),
+
+      array(
+        'id'          => 'novell_carousel_slides',
+        'label'       => __( 'Slides' ),
+        'desc'        => __( 'Add new slide to carousel', 'novell' ),
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'carousel',
+        'settings'    => array(
+          array(
+            'id'          => 'caption',
+            'label'       => __( 'Caption', 'novell' ),
+            'std'         => '',
+            'type'        => 'text'
+          ),
+          array(
+            'id'          => 'image',
+            'label'       => __( 'Featured Image', 'novell' ),
+            'std'         => '',
+            'type'        => 'upload'
+          ),
+          array(
+            'id'          => 'url',
+            'label'       => __( 'Link', 'novell' ),
+            'std'         => '',
+            'type'        => 'text'
           )
         )
       )
