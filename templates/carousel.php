@@ -15,7 +15,11 @@
 
   <div class="carousel-inner">
     <?php foreach ( $slides as $index => $slide ) : ?>
-    <div class="item<?php echo $index === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide[ 'image' ] ?>)">
+    <?php
+      $image_id  = wp_get_attachment_id_by_url( $slide[ 'image' ] );
+      $slide_image = wp_get_attachment_image_src( $image_id, 'thumb-large' );
+    ?>
+    <div class="item<?php echo $index === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide_image[ 0 ] ?>)">
       <div class="carousel-caption">
         <h4>
           <a href="<?php echo $slide[ 'url' ] ?>">

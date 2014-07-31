@@ -3,7 +3,7 @@
   if ( ! defined( 'ABSPATH' ) ) exit();
 
   if ( ! isset( $content_width ) )
-    $content_width = 720;
+    $content_width = 1024;
 
   // Theme Options
   require get_template_directory() . '/includes/theme-options.php';

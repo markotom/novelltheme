@@ -22,6 +22,9 @@ function novell_configure_theme() {
   // Enqueue assets
   add_action( 'wp_enqueue_scripts', 'novell_enqueue_assets' );
 
+  // Image sizes
+  add_action( 'init', 'novell_image_sizes' );
+
 }
 
 // Theme support
@@ -93,6 +96,14 @@ function novell_enqueue_assets() {
     wp_enqueue_script( 'novell_scripts' );
 
   }
+
+}
+
+// Images sizes
+function novell_image_sizes() {
+
+  // Add thumb-large size
+  add_image_size( 'thumb-large', 1024, 525, true );
 
 }
 
