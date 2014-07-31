@@ -3,10 +3,10 @@
 
   <!-- .entry-header -->
   <header class="entry-header">
-    <!-- .entry-meta -->
-    <div class="entry-meta">
+    <!-- .entry-meta.entry-meta-top -->
+    <div class="entry-meta entry-meta-top">
       <span class="entry-meta-categories"><?php the_category(' '); ?></span>
-    </div><!-- /.entry-meta -->
+    </div><!-- /.entry-meta.entry-meta-top -->
 
     <?php if ( is_single() ) : ?>
     <h1 class="h3 entry-title"><?php the_title(); ?></h1>
@@ -16,8 +16,8 @@
     </h1>
     <?php endif; ?>
 
-    <!-- .entry-meta -->
-    <div class="entry-meta">
+    <!-- .entry-meta.entry-meta-middle -->
+    <div class="entry-meta entry-meta-middle">
       <!-- .entry-meta-author -->
       <div class="entry-meta-author">
         <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
@@ -43,7 +43,7 @@
         ?>
       </div><!-- /.entry-meta-comments -->
       <?php endif; ?>
-    </div><!-- /.entry-meta -->
+    </div><!-- /.entry-meta.entry-meta-middle -->
   </header><!-- /.entry-header -->
 
   <?php if ( is_single() ) : ?>
@@ -58,8 +58,8 @@
   </div><!-- /.entry-summary -->
   <?php endif; ?>
 
-  <!-- .entry-meta -->
-  <footer class="entry-meta">
+  <!-- .entry-meta.entry-meta-bottom -->
+  <footer class="entry-meta entry-meta-bottom">
     <span class="entry-meta-tags">
       <?php
         $tag_list = get_the_tag_list( null, ' ' );
@@ -67,6 +67,6 @@
           echo $tag_list;
       ?>
     </span>
-  </footer><!-- /.entry-meta -->
+  </footer><!-- /.entry-meta.entry-meta-bottom -->
 
 </article><!-- /#post-? -->
