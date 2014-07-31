@@ -102,6 +102,9 @@ function novell_enqueue_assets() {
 // Images sizes
 function novell_image_sizes() {
 
+  // Add thumb-medium size
+  add_image_size( 'thumb-medium', 780, 400, true );
+
   // Add thumb-large size
   add_image_size( 'thumb-large', 1024, 525, true );
 
