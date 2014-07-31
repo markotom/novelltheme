@@ -50,10 +50,14 @@ body {
       height: 400px;
     }
   }
+
+  .carousel-caption {
+    font-size: 80%;
+  }
 }
 
-.site-logo,
 .site-name {
+  .h3;
   .text-center;
 
   margin: @line-height-computed;
@@ -62,7 +66,9 @@ body {
     color: @btn-primary-color;
     text-decoration: none;
   }
+}
 
+.site-logo {
   img {
     .center-block;
 
@@ -114,6 +120,12 @@ body {
   div + div {
     border-left: 1px solid @well-border;
   }
+}
+
+a.post-thumbnail,
+a.post-thumbnail img,
+img.post-thumbnail {
+  width: 100%;
 }
 
 .entry-meta-author,

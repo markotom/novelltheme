@@ -16,6 +16,8 @@
     </h1>
     <?php endif; ?>
 
+    <?php novell_post_thumbnail(); ?>
+
     <!-- .entry-meta.entry-meta-middle -->
     <div class="entry-meta entry-meta-middle">
       <!-- .entry-meta-author -->

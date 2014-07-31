@@ -8,18 +8,23 @@
  */
 
 function novell_global_layout() {
+
   // Get global layout
   $column_global_layout = ot_get_option( 'novell-layout-global' );
   echo $column_global_layout;
+
 }
 
 function novell_get_global_layout() {
+
   // Get global layout
   $column_global_layout = ot_get_option( 'novell-layout-global' );
   return $column_global_layout;
+
 }
 
 function novell_main_sidebar() {
+
   // Hide main sidebar if specified full column
   if (  novell_get_global_layout() !== 'col-1-full' ) :
 
@@ -27,9 +32,11 @@ function novell_main_sidebar() {
     get_sidebar();
 
   endif;
+
 }
 
 function novell_secondary_sidebar() {
+
   // Show secondary sidebar if specified three columns
   if (  novell_get_global_layout() === 'col-3-middle' ||
         novell_get_global_layout() === 'col-3-right' ||
@@ -39,20 +46,54 @@ function novell_secondary_sidebar() {
     get_sidebar( 'secondary' );
 
   endif;
+
 }
 
 function novell_pagination() {
-  // Please, use WP-PageNavi plugin
-  if ( function_exists( "wp_pagenavi" ) ) :
+
+  // You can use WP-PageNavi plugin
+  // https://wordpress.org/plugins/wp-pagenavi
+  if ( function_exists( 'wp_pagenavi' ) ) :
+
     wp_pagenavi();
+
   else:
+
     echo '<ul class="pager"><li class="previous">';
+
       previous_posts_link();
+
     echo '</li><li class="next right">';
+
       next_posts_link();
-    echo ' </li></ul>';
+
+    echo '</li></ul>';
 
   endif;
+
+}
+
+function novell_post_thumbnail( $thumb_size = 'thumb-large' ) {
+
+  if ( has_post_thumbnail() ) :
+
+    if ( is_singular() ) :
+
+      the_post_thumbnail( $thumb_size, array( 'class' => 'post-thumbnail img-responsive' ) );
+
+    else :
+
+      $permalink       = get_permalink();
+      $title_attribute = the_title_attribute( array( 'echo' => 0 ) );
+
+      echo '<a href="' . $permalink . '" title="' . $title_attribute . '" class="post-thumbnail" rel="bookmark">';
+        the_post_thumbnail( $thumb_size, array( 'class' => 'img-responsive' ) );
+      echo '</a>';
+
+    endif;
+
+  endif;
+
 }
 
 // Get attachment id by url
