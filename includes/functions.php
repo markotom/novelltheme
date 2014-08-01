@@ -9,19 +9,80 @@
 
 function novell_global_layout() {
 
-  // Get global layout
-  $column_global_layout = ot_get_option( 'novell-layout-global' );
-  echo $column_global_layout;
+  // Echo global layout
+  $global_layout = novell_get_global_layout();
+  echo $global_layout;
 
 }
 
-function novell_get_global_layout() {
+    function novell_get_global_layout() {
 
-  // Get global layout
-  $column_global_layout = ot_get_option( 'novell-layout-global' );
-  return $column_global_layout;
+      // Get global layout
+      $column_global_layout = ot_get_option( 'novell-layout-global' );
+      return $column_global_layout;
+
+    }
+
+function novell_current_layout() {
+
+  // Echo current layout
+  $current_layout = novell_get_current_layout();
+  echo $current_layout;
 
 }
+
+    function novell_get_current_layout() {
+
+      // Set global layout name
+      $layout_name = 'novell-layout-global';
+
+      // Set home layout name
+      if ( is_home() ) {
+        $layout_name = 'novell-layout-home';
+      }
+
+      // Set single layout name
+      if ( is_single() ) {
+        $layout_name = 'novell-layout-single';
+      }
+
+      // Set page layout name
+      if ( is_page() ) {
+        $layout_name = 'novell-layout-page';
+      }
+
+      // Set archive layout name
+      if ( is_archive() ) {
+        $layout_name = 'novell-layout-archive';
+      }
+
+      // Set category layout name
+      if ( is_category() ) {
+        $layout_name = 'novell-layout-category';
+      }
+
+      // Set search layout name
+      if ( is_search() ) {
+        $layout_name = 'novell-layout-search';
+      }
+
+      // Set error 404 layout name
+      if ( is_404() ) {
+        $layout_name = 'novell-layout-404';
+      }
+
+      // Get global layout
+      $global_layout = novell_get_global_layout();
+
+      // Set current layout
+      $current_layout = ot_get_option( $layout_name );
+
+
+      return  ! $current_layout || $current_layout === 'inherit'
+              ? $global_layout
+              : $current_layout;
+
+    }
 
 function novell_main_sidebar() {
 
