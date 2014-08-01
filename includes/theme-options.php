@@ -38,6 +38,12 @@ function custom_theme_options() {
   // Get saved settings
   $saved_settings = get_option( ot_settings_id(), array() );
 
+  // Column layouts
+  $global_column_layouts = novell_get_column_layouts();
+  array_shift( $global_column_layouts );
+
+  $column_layouts = novell_get_column_layouts();
+
   // Set custom settings
   $custom_settings = array(
 
@@ -66,6 +72,14 @@ function custom_theme_options() {
       array(
         'id' => 'general',
         'title' => __( 'General', 'novell' )
+      ),
+      array(
+        'id' => 'blog',
+        'title' => __( 'Blog', 'novell' )
+      ),
+      array(
+        'id' => 'frontpage',
+        'title' => __( 'Front page', 'novell' )
       ),
       array(
         'id' => 'layout',
@@ -103,15 +117,6 @@ function custom_theme_options() {
         'section'     => 'general'
       ),
 
-      // Featured Category
-      array(
-        'id' => 'novell_featured_category',
-        'label' => __( 'Featured Category', 'novell' ),
-        'desc' => __( 'Shows posts from this category instead all posts from all categories', 'novell' ),
-        'type' => 'category-select',
-        'section' => 'general',
-      ),
-
       // Excerpt Length
       array(
         'id' => 'novell_excerpt_length',
@@ -119,8 +124,17 @@ function custom_theme_options() {
         'desc' => __( 'Set max number of words', 'novell' ),
         'std' => '55',
         'type' => 'numeric-slider',
-        'section' => 'general',
+        'section' => 'blog',
         'min_max_step' => '0,100,1'
+      ),
+
+      // Featured Category
+      array(
+        'id' => 'novell_featured_category',
+        'label' => __( 'Featured Category', 'novell' ),
+        'desc' => __( 'Shows posts from this category instead all posts from all categories', 'novell' ),
+        'type' => 'category-select',
+        'section' => 'frontpage',
       ),
 
       // Social Links
@@ -136,47 +150,86 @@ function custom_theme_options() {
       array(
         'id'          => 'novell-layout-global',
         'label'       => __( 'Global layout', 'novell' ),
-        'desc'        => __( 'Define your global layout', 'novell' ),
-        'std'         => 'col-3-middle',
+        'desc'        => __( 'Global layout. Other layouts will override this layout if they are set.', 'novell' ),
+        'std'         => 'col-3-right',
         'type'        => 'radio-image',
         'section'     => 'layout',
-        'choices'     => array(
-          array(
-            'value'     => 'col-1-full',
-            'label'     => '1 Column Full',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-1-full.gif'
-          ),
-          array(
-            'value'     => 'col-2-right',
-            'label'     => '2 Column Right',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-right.gif'
-          ),
-          array(
-            'value'     => 'col-2-left',
-            'label'     => '2 Column Left',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-left.gif'
-          ),
-          array(
-            'value'     => 'col-3-middle',
-            'label'     => '3 Column Middle',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-middle.gif'
-          ),
-          array(
-            'value'     => 'col-3-right',
-            'label'     => '3 Column Right',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-right.gif'
-          ),
-          array(
-            'value'     => 'col-3-left',
-            'label'     => '3 Column Left',
-            'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-left.gif'
-          )
-        )
+        'choices'     => $global_column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-home',
+        'label'       => __( 'Home', 'novell' ),
+        'desc'        => __( 'Home layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-single',
+        'label'       => __( 'Single', 'novell' ),
+        'desc'        => __( 'Single layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-page',
+        'label'       => __( 'Page', 'novell' ),
+        'desc'        => __( 'Page layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-archive',
+        'label'       => __( 'Archive', 'novell' ),
+        'desc'        => __( 'Archive layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-category',
+        'label'       => __( 'Category', 'novell' ),
+        'desc'        => __( 'Category layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-search',
+        'label'       => __( 'Search', 'novell' ),
+        'desc'        => __( 'Search layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
+      ),
+
+      array(
+        'id'          => 'novell-layout-404',
+        'label'       => __( 'Error 404', 'novell' ),
+        'desc'        => __( 'Error 404 layout. If is not defined, it inherits global layout', 'novell' ),
+        'std'         => 'inherit',
+        'type'        => 'radio-image',
+        'section'     => 'layout',
+        'choices'     => $column_layouts
       ),
 
       array(
         'id'          => 'novell_carousel_slides',
-        'label'       => __( 'Slides' ),
+        'label'       => __( 'Slides', 'novell' ),
         'desc'        => __( 'Add new slide to carousel', 'novell' ),
         'std'         => '',
         'type'        => 'list-item',
@@ -206,37 +259,80 @@ function custom_theme_options() {
 
   );
 
-  // Default social links
-  add_action( 'ot_type_social_links_defaults', function () {
-    return array(
-      array(
-          'name'    => __( 'Facebook', 'option-tree' ),
-          'title'   => '',
-          'href'    => ''
-      ),
-      array(
-        'name'    => __( 'Twitter', 'option-tree' ),
-        'title'   => '',
-        'href'    => ''
-      ),
-      array(
-        'name'    => __( 'Google+', 'option-tree' ),
-        'title'   => '',
-        'href'    => ''
-      ),
-      array(
-        'name'    => __( 'Youtube', 'option-tree' ),
-        'title'   => '',
-        'href'    => ''
-      )
-    );
-  });
-
   // Save custom settings if are not the same
   if ( $saved_settings !== $custom_settings ) {
     update_option( ot_settings_id(), $custom_settings );
   }
 
 }
+
+// To get column layouts
+function novell_get_column_layouts() {
+
+  return array(
+    array(
+      'value'     => 'inherit',
+      'label'     => __( 'Inherit', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/inherit.gif'
+    ),
+    array(
+      'value'     => 'col-1-full',
+      'label'     => __( '1 Column Full', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-1-full.gif'
+    ),
+    array(
+      'value'     => 'col-2-right',
+      'label'     => __( '2 Column Right', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-right.gif'
+    ),
+    array(
+      'value'     => 'col-2-left',
+      'label'     => __( '2 Column Left', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-2-left.gif'
+    ),
+    array(
+      'value'     => 'col-3-middle',
+      'label'     => __( '3 Column Middle', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-middle.gif'
+    ),
+    array(
+      'value'     => 'col-3-right',
+      'label'     => __( '3 Column Right', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-right.gif'
+    ),
+    array(
+      'value'     => 'col-3-left',
+      'label'     => __( '3 Column Left', 'novell' ),
+      'src'       => get_template_directory_uri() . '/assets/images/layouts/col-3-left.gif'
+    )
+  );
+
+}
+
+// Default social links
+add_action( 'ot_type_social_links_defaults', function () {
+  return array(
+    array(
+        'name'    => __( 'Facebook', 'option-tree' ),
+        'title'   => '',
+        'href'    => ''
+    ),
+    array(
+      'name'    => __( 'Twitter', 'option-tree' ),
+      'title'   => '',
+      'href'    => ''
+    ),
+    array(
+      'name'    => __( 'Google+', 'option-tree' ),
+      'title'   => '',
+      'href'    => ''
+    ),
+    array(
+      'name'    => __( 'Youtube', 'option-tree' ),
+      'title'   => '',
+      'href'    => ''
+    )
+  );
+});
 
 ?>
