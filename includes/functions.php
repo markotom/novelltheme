@@ -33,42 +33,46 @@ function novell_current_layout() {
 
     function novell_get_current_layout() {
 
-      // Set global layout name
-      $layout_name = 'novell-layout-global';
-
-      // Set home layout name
       if ( is_home() ) {
+
+        // Set home layout name
         $layout_name = 'novell-layout-home';
-      }
 
-      // Set single layout name
-      if ( is_single() ) {
+      } elseif ( is_single() ) {
+
+        // Set single layout name
         $layout_name = 'novell-layout-single';
-      }
 
-      // Set page layout name
-      if ( is_page() ) {
-        $layout_name = 'novell-layout-page';
-      }
+      } elseif ( is_category() ) {
 
-      // Set archive layout name
-      if ( is_archive() ) {
-        $layout_name = 'novell-layout-archive';
-      }
-
-      // Set category layout name
-      if ( is_category() ) {
+        // Set category layout name
         $layout_name = 'novell-layout-category';
-      }
 
-      // Set search layout name
-      if ( is_search() ) {
+      } elseif ( is_archive() ) {
+
+        // Set archive layout name
+        $layout_name = 'novell-layout-archive';
+
+      } elseif ( is_search() ) {
+
+        // Set search layout name
         $layout_name = 'novell-layout-search';
-      }
 
-      // Set error 404 layout name
-      if ( is_404() ) {
+      } elseif ( is_page() ) {
+
+        // Set page layout name
+        $layout_name = 'novell-layout-page';
+
+      } elseif ( is_404() ) {
+
+        // Set error 404 layout name
         $layout_name = 'novell-layout-404';
+
+      } else {
+
+        // Set global layout name by default
+        $layout_name = 'novell-layout-global';
+
       }
 
       // Get global layout
