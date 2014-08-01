@@ -4,7 +4,7 @@
 <div class="container">
 
   <!-- .col-(3|2|1)-(left|right|full) -->
-  <div class="<?php novell_global_layout(); ?>">
+  <div class="<?php novell_current_layout(); ?>">
 
     <!-- .content -->
     <div class="content" role="main">
