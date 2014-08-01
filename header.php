@@ -33,12 +33,12 @@
         </a>
       </div><!-- /.site-logo -->
 
-      <?php elseif ( ot_get_option( 'novell_heading_text' ) ) : ?>
+      <?php elseif ( ot_get_option( 'novell_heading' ) ) : ?>
 
       <!-- .site-name -->
       <h1 class="site-name">
         <a href="<?php echo home_url() ; ?>" rel="home">
-          <?php echo ot_get_option( 'novell_heading_text' ) ?>
+          <?php echo ot_get_option( 'novell_heading' ) ?>
         </a>
       </h1><!-- /.site-name -->
 

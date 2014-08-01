@@ -78,16 +78,16 @@ function custom_theme_options() {
         'title' => __( 'Blog', 'novell' )
       ),
       array(
-        'id' => 'frontpage',
-        'title' => __( 'Front page', 'novell' )
-      ),
-      array(
-        'id' => 'layout',
-        'title' => __( 'Layout', 'novell' )
+        'id' => 'home',
+        'title' => __( 'Home', 'novell' )
       ),
       array(
         'id' => 'carousel',
         'title' => __( 'Carousel', 'novell' )
+      ),
+      array(
+        'id' => 'layout',
+        'title' => __( 'Layout', 'novell' )
       ),
       array(
         'id' => 'social-links',
@@ -98,11 +98,11 @@ function custom_theme_options() {
     // Settings
     'settings' => array(
 
-      // Heading Text
+      // Heading
       array(
-        'id' => 'novell_heading_text',
-        'label' => __( 'Heading Text', 'novell' ),
-        'desc' => __( 'Shows heading text instead site name', 'novell' ),
+        'id' => 'novell_heading',
+        'label' => __( 'Heading', 'novell' ),
+        'desc' => __( 'Shows heading instead site name', 'novell' ),
         'type' => 'text',
         'section' => 'general',
       ),
@@ -111,7 +111,7 @@ function custom_theme_options() {
       array(
         'id'          => 'novell_logo',
         'label'       => __( 'Logo', 'novell' ),
-        'desc'        => __( 'Upload your own logo. If you don\'t upload the logo, your heading text or site name will be displayed instead', 'novell' ),
+        'desc'        => __( 'Upload your own logo. If you don\'t upload the logo, your heading or site name will be displayed instead', 'novell' ),
         'std'         => '',
         'type'        => 'upload',
         'section'     => 'general'
@@ -134,7 +134,7 @@ function custom_theme_options() {
         'label' => __( 'Featured Category', 'novell' ),
         'desc' => __( 'Shows posts from this category instead all posts from all categories', 'novell' ),
         'type' => 'category-select',
-        'section' => 'frontpage',
+        'section' => 'home',
       ),
 
       // Social Links
@@ -151,7 +151,7 @@ function custom_theme_options() {
         'id'          => 'novell-layout-global',
         'label'       => __( 'Global layout', 'novell' ),
         'desc'        => __( 'Global layout. Other layouts will override this layout if they are set.', 'novell' ),
-        'std'         => 'col-3-right',
+        'std'         => 'col-3-left',
         'type'        => 'radio-image',
         'section'     => 'layout',
         'choices'     => $global_column_layouts
