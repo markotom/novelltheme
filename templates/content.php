@@ -3,6 +3,9 @@
 
   <!-- .entry-header -->
   <header class="entry-header">
+
+    <?php novell_post_thumbnail(); ?>
+
     <!-- .entry-meta.entry-meta-top -->
     <div class="entry-meta entry-meta-top">
       <span class="entry-meta-categories"><?php the_category(' '); ?></span>
@@ -15,8 +18,6 @@
       <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
     </h1>
     <?php endif; ?>
-
-    <?php novell_post_thumbnail(); ?>
 
     <!-- .entry-meta.entry-meta-middle -->
     <div class="entry-meta entry-meta-middle">
