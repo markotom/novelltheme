@@ -15,6 +15,9 @@
           // Carousel
           get_template_part( 'templates/carousel' );
 
+          // Get featured category
+          query_posts( 'cat=' . ot_get_option( 'novell_featured_category' ) );
+
         endif;
 
 
