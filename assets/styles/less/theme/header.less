@@ -2,12 +2,15 @@
 // Header
 // --------------------------------------------------
 
+body.home #header {
+  .box-shadow(0 0 20px 2px #000000);
+}
+
 #header {
   position: relative;
   z-index: 1000;
   background-color: @brand-primary;
   #gradient > .vertical(@brand-primary, lighten(@brand-primary, 5%));
-  .box-shadow(0 0 20px 2px #000000);
 
   .search-form {
     padding-left: @line-height-computed;
@@ -69,4 +72,11 @@
 
 .page-title {
   .h3;
+}
+
+#main {
+  @media (min-width: @grid-float-breakpoint) {
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+  }
 }

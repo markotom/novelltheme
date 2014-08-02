@@ -107,6 +107,15 @@ function custom_theme_options() {
         'section' => 'general',
       ),
 
+      // Subheading
+      array(
+        'id' => 'novell_subheading',
+        'label' => __( 'Subheading', 'novell' ),
+        'desc' => __( 'Define your subheading', 'novell' ),
+        'type' => 'text',
+        'section' => 'general',
+      ),
+
       // Logo
       array(
         'id'          => 'novell_logo',

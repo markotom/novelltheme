@@ -1,0 +1,36 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+#breadcrumb {
+  border-bottom: 1px solid @gray-lighter;
+
+  .breadcrumb-title {
+    display: none !important;
+  }
+
+  .breadcrumb {
+    font-size: 80%;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+
+    .breadcrumb-title {
+      .pull-left;
+
+      display: block !important;
+      margin-top: @breadcrumb-padding-vertical;
+      font-size: 125%;
+      font-variant: small-caps;
+      text-transform: lowercase;
+    }
+
+    .breadcrumb {
+      .pull-right;
+
+      font-size: 85%;
+    }
+
+  }
+}
+
