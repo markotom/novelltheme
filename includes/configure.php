@@ -39,6 +39,11 @@ function novell_theme_support() {
   // Add post thumbnails support
   add_theme_support( 'post-thumbnails' );
 
+  // HTML5 support
+  add_theme_support( 'html5', array(
+    'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+  ) );
+
 }
 
 // Head cleanup
