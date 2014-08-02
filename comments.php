@@ -79,12 +79,6 @@
       </div><!-- /#pingback-content -->
     </div><!-- /.tab-content -->
 
-  <?php else : ?>
-
-    <?php if ( comments_open() ) : ?>
-    <?php _e( 'No comments yet.' ); ?>
-    <?php endif; ?>
-
   <?php endif; ?>
 
   <?php if ( comments_open() ) comment_form(); ?>
