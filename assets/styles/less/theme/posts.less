@@ -1,0 +1,60 @@
+//
+// Posts
+// --------------------------------------------------
+
+.content > article {
+  padding-top: @line-height-computed / 2;
+  padding-bottom: @line-height-computed / 2;
+}
+
+.entry-meta-middle {
+  &:extend(.clearfix all);
+
+  margin: @line-height-computed / 2 0;
+  border: 1px solid @well-border;
+  border-radius: @border-radius-base;
+
+  div + div {
+    border-left: 1px solid @well-border;
+  }
+}
+
+a.post-thumbnail,
+a.post-thumbnail img,
+img.post-thumbnail {
+  width: 100%;
+}
+
+.entry-meta-author,
+.entry-meta-date,
+.entry-meta-comments {
+  .text-center;
+  &:extend(small);
+
+  padding: 5px 10px;
+}
+
+.entry-meta-author,
+.entry-meta-date {
+  .pull-left;
+  width: 50%;
+}
+
+.entry-meta-comments {
+  clear: both;
+  border-top: 1px solid @well-border;
+}
+
+.entry-meta-categories {
+  a {
+    .label;
+    .label-default;
+
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+.entry-meta-tags {
+  font-size: 80%;
+}

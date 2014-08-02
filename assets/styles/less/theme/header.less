@@ -1,0 +1,72 @@
+//
+// Header
+// --------------------------------------------------
+
+#header {
+  position: relative;
+  z-index: 1000;
+  background-color: @brand-primary;
+  #gradient > .vertical(@brand-primary, lighten(@brand-primary, 5%));
+  .box-shadow(0 0 20px 2px #000000);
+
+  .search-form {
+    padding-left: @line-height-computed;
+    padding-right: @line-height-computed;
+    padding-bottom: @line-height-computed;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .search-form {
+      .pull-right;
+
+      width: 300px;
+      margin-top: @line-height-computed;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.site-name {
+  .h3;
+  .text-center;
+
+  a {
+    color: @btn-primary-color;
+    text-decoration: none;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .h2;
+    .pull-left;
+
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+  }
+}
+
+.site-logo {
+  margin-top: @line-height-computed / 2;
+  margin-bottom: @line-height-computed / 2;
+
+  img {
+    .center-block;
+
+    @media (max-width: @screen-xs-max) {
+      max-width: 200%;
+    }
+
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .pull-left;
+
+    img {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.page-title {
+  .h3;
+}
