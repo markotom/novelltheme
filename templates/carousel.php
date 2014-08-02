@@ -21,12 +21,21 @@
     ?>
     <div class="item<?php echo $index === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide_image[ 0 ] ?>)">
       <div class="carousel-caption">
+        <?php if ( $slide[ 'title' ] ) : ?>
         <h4>
+          <?php if ( $slide[ 'url' ] ) : ?>
           <a href="<?php echo $slide[ 'url' ] ?>">
             <?php echo $slide[ 'title' ] ?>
           </a>
+          <?php else : ?>
+          <?php echo $slide[ 'title' ] ?>
+          <?php endif; ?>
         </h4>
+        <?php endif; ?>
+
+        <?php if ( $slide[ 'caption' ] ) : ?>
         <p><?php echo $slide[ 'caption' ] ?></p>
+        <?php endif; ?>
       </div>
     </div>
     <?php endforeach; ?>
