@@ -6,10 +6,12 @@
 
     <?php novell_post_thumbnail(); ?>
 
+    <?php if ( ! is_single() ) : ?>
     <!-- .entry-meta.entry-meta-top -->
     <div class="entry-meta entry-meta-top">
       <span class="entry-meta-categories"><?php the_category(' '); ?></span>
     </div><!-- /.entry-meta.entry-meta-top -->
+    <?php endif; ?>
 
     <?php if ( is_single() ) : ?>
     <h1 class="h3 entry-title"><?php the_title(); ?></h1>

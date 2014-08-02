@@ -90,5 +90,20 @@
 
   </div><!-- /#header -->
 
+  <?php if ( ! is_home() ) : ?>
+  <!-- #breadcrumb -->
+  <div id="breadcrumb">
+    <div class="container">
+      <?php if ( ot_get_option( 'novell_subheading' ) ) : ?>
+        <h2 class="breadcrumb-title text-muted">
+          <?php echo ot_get_option( 'novell_subheading' ) ?>
+        </h2>
+      <?php endif; ?>
+
+      <?php the_breadcrumb(); ?>
+    </div>
+  </div><!-- /#breadcrumb -->
+  <?php endif; ?>
+
   <!-- #main -->
   <div id="main">
