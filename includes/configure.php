@@ -99,6 +99,10 @@ function novell_enqueue_assets() {
     wp_enqueue_script( 'bootstrap' );
     // Enqueue novell scripts
     wp_enqueue_script( 'novell_scripts' );
+    // Enqueue comment scripts
+    if ( is_singular() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+    }
 
   }
 
