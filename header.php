@@ -53,6 +53,8 @@
 
       <?php endif ?>
 
+      <?php get_search_form(); ?>
+
     </div><!-- /.container -->
 
     <!-- #navbar-main.navbar.navbar-default -->
