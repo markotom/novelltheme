@@ -40,6 +40,10 @@
   div + div {
     border-left: 1px solid @well-border;
   }
+
+  @media (min-width: @grid-float-breakpoint) {
+    display: inline-block;
+  }
 }
 
 a.post-thumbnail,
@@ -59,12 +63,20 @@ div.post-thumbnail {
   &:extend(small);
 
   padding: 5px 10px;
+
+  @media (min-width: @grid-float-breakpoint) {
+    .text-left;
+  }
 }
 
 .entry-meta-author,
 .entry-meta-date {
   .pull-left;
   width: 50%;
+
+  @media (min-width: @grid-float-breakpoint) {
+    width: auto;
+  }
 }
 
 .entry-meta-comments {
