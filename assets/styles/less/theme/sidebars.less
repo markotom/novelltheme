@@ -17,6 +17,7 @@
   }
 
   .widget {
+    .clearfix;
     #gradient > .vertical(lighten(@gray-lighter, 5%), lighten(@gray-lighter, 3%));
 
     padding: @line-height-computed / 2;
@@ -29,7 +30,7 @@
 
     margin: 0 -(@line-height-computed / 2);
     margin-bottom: @line-height-computed / 2;
-    padding: 0 @line-height-computed;
+    padding: 0 @line-height-computed 0 @line-height-computed / 2;
     padding-bottom: @line-height-computed / 2;
     border-bottom: 1px solid @well-border;
   }

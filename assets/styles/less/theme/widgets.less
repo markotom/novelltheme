@@ -70,13 +70,6 @@
       border-bottom: 1px solid @well-border;
       border-left:   1px solid transparent;
     }
-
-    &:before {
-      margin-right: 5px;
-      content: "\e144";
-      font-family: 'Glyphicons Halflings';
-      vertical-align: middle;
-    }
   }
 
 
@@ -90,22 +83,60 @@
   }
 }
 
+// Glyphicons (widget list)
+.widget_nav_menu .menu > li > a:before,
+.widget_meta > ul > li > a:before,
+.widget_pages > ul > li > a:before,
+.widget_archive > ul > li > a:before,
+.widget_categories > ul > li > a:before,
+
+// Glyphicons (titles)
+.widget_nav_menu .widget-title:before,
+.widget_meta .widget-title:before,
+.widget_archive .widget-title:before,
+.widget_pages .widget-title:before,
+.widget_calendar .widget-title:before,
+.widget_recent_comments .widget-title:before,
+.widget_recent_entries .widget-title:before,
+.widget_tag_cloud .widget-title:before,
+
+// Glyphicons (extras)
+.widget_recent_comments > ul > li a:first-child:before,
+.widget_recent_entries > ul > li a:before {
+  margin-right: 5px;
+  content: "\e144";
+  font-family: 'Glyphicons Halflings';
+  vertical-align: middle;
+}
+
 // Widget Archive
-.widget_archive > ul {
-  > li > a:before {
+.widget_archive {
+  .widget-title:before {
+    content: "\e109";
+  }
+
+  > ul  > li > a:before {
     content: "\e109";
   }
 }
 
 // Widget Pages
-.widget_pages > ul {
-  > li > a:before {
+.widget_pages {
+  .widget-title:before {
+    content: "\e022";
+  }
+
+  > ul  > li > a:before {
     content: "\e022";
   }
 }
 
 // Widget Calendar
 .widget_calendar {
+  .widget-title:before {
+    content: "\e109";
+  }
+
   table {
     .table;
     .table-condensed;
@@ -135,23 +166,55 @@
     > li + li {
       margin-top: @line-height-computed / 2;
     }
-
-    > li a:first-child {
-      &:before {
-        margin-right: 5px;
-        content: "\e144";
-        font-family: 'Glyphicons Halflings';
-        vertical-align: middle;
-      }
-    }
   }
 }
 
 // Widget Recent Comments
 .widget_recent_comments {
-  > ul > li a:first-child {
-    &:before {
-      content: "\e111";
+  .widget-title:before {
+    content: "\e111";
+  }
+
+  > ul > li a:first-child:before {
+    content: "\e111";
+  }
+}
+
+// Widget Recent Entries
+.widget_recent_entries {
+  .widget-title:before {
+    content: "\e022";
+  }
+
+  > ul > li {
+    position: relative;
+    padding-top: (@line-height-computed / 2) + 5px;
+
+    a {
+      &:before {
+        content: "\e022";
+      }
     }
+
+    span {
+      .label;
+      .label-default;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: normal;
+    }
+  }
+}
+
+// Widget Tag Cloud
+.widget_tag_cloud  {
+  .widget-title:before {
+    content: "\2601";
+  }
+
+  .tagcloud {
+    .text-center;
   }
 }
