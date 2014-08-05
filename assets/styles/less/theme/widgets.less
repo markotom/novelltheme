@@ -2,6 +2,7 @@
 // Widgets
 // --------------------------------------------------
 
+// Search form
 .search-form {
   input[type="search"] {
     .input-sm;
@@ -22,5 +23,83 @@
       .btn-default;
     }
 
+  }
+}
+
+// Widget Nav Menu
+.widget_nav_menu .menu,
+
+// Widget Meta
+.widget_meta > ul,
+
+// Widget Pages
+.widget_pages > ul,
+
+// Widget Archive
+.widget_archive > ul,
+
+// Widget Categories
+.widget_categories > ul {
+  .nav;
+  .nav-tabs;
+
+  border-bottom: 0;
+  margin: -(@line-height-computed / 2);
+
+  > li {
+    float: none;
+
+    & + li {
+      margin-top: 0;
+
+      & > a {
+        border-top: 1px solid @well-border;
+      }
+    }
+  }
+
+  > li > a {
+    margin-right: 0;
+    border-radius: 0;
+
+    &:hover,
+    &:focus {
+      z-index: 2;
+      border-top:    1px solid @well-border;
+      border-right:  1px solid transparent;
+      border-bottom: 1px solid @well-border;
+      border-left:   1px solid transparent;
+    }
+
+    &:before {
+      margin-right: 5px;
+      content: "\e144";
+      font-family: 'Glyphicons Halflings';
+      vertical-align: middle;
+    }
+  }
+
+
+  > li:first-child > a {
+    border-top: 0;
+    .border-top-radius(0);
+  }
+
+  > li:last-child > a {
+    .border-bottom-radius(0);
+  }
+}
+
+// Widget Archive
+.widget_archive > ul {
+  > li > a:before {
+    content: "\e109";
+  }
+}
+
+// Widget Pages
+.widget_pages > ul {
+  > li > a:before {
+    content: "\e022";
   }
 }
