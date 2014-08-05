@@ -1,12 +1,13 @@
   </div><!-- /#main -->
 
-  <!-- #bottom -->
-  <div id="bottom">
-    <!-- .container -->
-    <div class="container">
-      <?php get_sidebar( 'bottom' ); ?>
-    </div><!-- /.container -->
-  </div><!-- /#bottom -->
+  <?php
+
+    // This is a horizontal sidebar.
+    // Please use Columnify: http://wordpress.org/plugins/columnify
+
+    get_sidebar( 'bottom' );
+
+  ?>
 
   <!-- #footer -->
   <div id="footer">
