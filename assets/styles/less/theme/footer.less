@@ -3,16 +3,28 @@
 // --------------------------------------------------
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: @line-height-computed * 3;
-  background-color: @gray-lighter;
+  color: @gray;
+  background-color: @gray-darker;
 
   .container {
     .text-center;
 
     padding-top: @line-height-computed;
     padding-bottom: @line-height-computed;
+  }
+
+  a {
+    color: @gray-light;
+
+    &:hover,
+    &:focus {
+      color: @gray-lighter;
+    }
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .container {
+      .text-left;
+    }
   }
 }
