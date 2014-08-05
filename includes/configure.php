@@ -8,7 +8,7 @@
  */
 
 // After setup theme
-add_action( 'after_setup_theme', 'novell_configure_theme' );
+add_action( 'after_setup_theme', 'novell_configure_theme', 9 );
 
 // Configure theme
 function novell_configure_theme() {
