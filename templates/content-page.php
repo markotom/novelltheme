@@ -3,6 +3,9 @@
 
   <!-- .entry-header -->
   <header class="entry-header">
+
+    <?php novell_post_thumbnail(); ?>
+
     <h1 class="h3 entry-title"><?php the_title(); ?></h1>
   </header><!-- /.entry-header -->
 
