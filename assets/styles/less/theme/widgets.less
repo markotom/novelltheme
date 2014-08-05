@@ -104,6 +104,7 @@
   }
 }
 
+// Widget Calendar
 .widget_calendar {
   table {
     .table;
@@ -117,6 +118,40 @@
 
     caption {
       .text-muted;
+    }
+  }
+}
+
+// Widget Recent Comments
+.widget_recent_comments,
+
+// Widget Recent Entries
+.widget_recent_entries {
+  font-size: 90%;
+
+  > ul {
+    .list-unstyled;
+
+    > li + li {
+      margin-top: @line-height-computed / 2;
+    }
+
+    > li a:first-child {
+      &:before {
+        margin-right: 5px;
+        content: "\e144";
+        font-family: 'Glyphicons Halflings';
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Widget Recent Comments
+.widget_recent_comments {
+  > ul > li a:first-child {
+    &:before {
+      content: "\e111";
     }
   }
 }
