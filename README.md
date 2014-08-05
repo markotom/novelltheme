@@ -5,7 +5,6 @@ Another Wordpress Theme
 
 ## Todo
 
-* Add pagination
 * Add social links
 * Add toggle sidebar
 * Add bottom navigation

@@ -35,6 +35,8 @@
 
           echo '</div>';
 
+          novell_pagination();
+
         else :
 
           // Get "No post found" template
