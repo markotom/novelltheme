@@ -8,3 +8,31 @@
   .visible-md;
   .visible-lg;
 }
+
+// Because .sidebar is shown if screen is greater than breakpoint
+@media (min-width: @grid-float-breakpoint) {
+
+  .widget + .widget {
+    margin-top: @line-height-computed;
+  }
+
+  .widget {
+    #gradient > .vertical(lighten(@gray-lighter, 5%), lighten(@gray-lighter, 3%));
+
+    padding: @line-height-computed / 2;
+    border-radius: @border-radius-base;
+    border: 1px solid @well-border;
+  }
+
+  .widget-title {
+    .h5;
+    .text-muted;
+
+    margin: 0 -(@line-height-computed / 2);
+    margin-bottom: @line-height-computed / 2;
+    padding: 0 @line-height-computed;
+    padding-bottom: @line-height-computed / 2;
+    border-bottom: 1px solid @well-border;
+  }
+
+}
