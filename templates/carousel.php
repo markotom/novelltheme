@@ -7,19 +7,19 @@
 
   <?php if ( count( $slides ) > 1 ) : ?>
   <ol class="carousel-indicators">
-    <?php foreach ( $slides as $index => $slide ) : ?>
-    <li data-target="#carousel-home" data-slide-to="<?php echo $index ?>"<?php echo $index === 0 ? ' class="active"' : '' ?>></li>
+    <?php $i = -1; foreach ( $slides as $slide ) : $i++; ?>
+    <li data-target="#carousel-home" data-slide-to="<?php echo $i ?>"<?php echo $i === 0 ? ' class="active"' : '' ?>></li>
     <?php endforeach; ?>
   </ol>
   <?php endif; ?>
 
   <div class="carousel-inner">
-    <?php foreach ( $slides as $index => $slide ) : ?>
+    <?php $i = -1; foreach ( $slides as $slide ) : $i++; ?>
     <?php
       $image_id  = wp_get_attachment_id_by_url( $slide[ 'image' ] );
       $slide_image = wp_get_attachment_image_src( $image_id, 'thumb-large' );
     ?>
-    <div class="item<?php echo $index === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide_image[ 0 ] ?>)">
+    <div class="item<?php echo $i === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide_image[ 0 ] ?>)">
       <div class="carousel-caption">
         <?php if ( $slide[ 'title' ] ) : ?>
         <h4>
