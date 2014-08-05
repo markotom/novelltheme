@@ -23,6 +23,8 @@
 
         if ( have_posts() ) :
 
+          echo '<div class="post-loop">';
+
           // Start the loop
           while ( have_posts() ) : the_post();
 
@@ -30,6 +32,8 @@
             get_template_part( 'templates/content' );
 
           endwhile;
+
+          echo '</div>';
 
         else :
 

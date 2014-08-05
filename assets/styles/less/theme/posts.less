@@ -2,9 +2,32 @@
 // Posts
 // --------------------------------------------------
 
-.content > article + article {
+.post-loop {
+  .row;
+}
+
+.post-loop > article {
+  .make-md-column(6);
+
+  &.even {
+    clear: left;
+  }
+  &.odd {
+    clear: right;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    font-size: 90%;
+  }
+}
+
+.post-loop > article + article {
   padding-top: @line-height-computed / 2;
   padding-bottom: @line-height-computed / 2;
+
+  @media (min-width: @grid-float-breakpoint) {
+    padding-top: 0;
+  }
 }
 
 .entry-meta-middle {
@@ -20,9 +43,13 @@
 }
 
 a.post-thumbnail,
-a.post-thumbnail img,
-img.post-thumbnail {
-  width: 100%;
+div.post-thumbnail {
+  display: block;
+  margin-bottom: @line-height-computed / 2;
+}
+
+.post-thumbnail img {
+  .img-responsive;
 }
 
 .entry-meta-author,
