@@ -71,25 +71,72 @@
           </button>
         </div><!-- /.navbar-header -->
 
-        <?php
+        <div id="navbar-collapse-1" class="collapse navbar-collapse">
+          <?php
 
-          // Shows main nav menu
-          wp_nav_menu(
-            array(
-              'depth'           => 3,
-              'theme_location'  => 'main',
-              'menu_class'      => 'nav navbar-nav',
-              'container_class' => 'collapse navbar-collapse',
-              'container_id'    => 'navbar-collapse-1'
-            )
-          );
+            // Shows main nav menu
+            wp_nav_menu(
+              array(
+                'depth'           => 3,
+                'theme_location'  => 'main',
+                'menu_class'      => 'nav navbar-nav',
+                'container'       => false
+              )
+            );
 
-        ?>
+          ?>
+
+          <?php
+
+            $socials = array();
+
+            if ( ot_get_option('novell_social_links_facebook') ) {
+              $socials[] = array(
+                'icon' => 'fa fa-facebook',
+                'url' => ot_get_option('novell_social_links_facebook')
+              );
+            }
+
+            if ( ot_get_option('novell_social_links_twitter') ) {
+              $socials[] = array(
+                'icon' => 'fa fa-twitter',
+                'url' => ot_get_option('novell_social_links_twitter')
+              );
+            }
+
+            if ( ot_get_option('novell_social_links_google') ) {
+              $socials[] = array(
+                'icon' => 'fa fa-google-plus',
+                'url' => ot_get_option('novell_social_links_google')
+              );
+            }
+
+            if ( ot_get_option('novell_social_links_youtube') ) {
+              $socials[] = array(
+                'icon' => 'fa fa-youtube',
+                'url' => ot_get_option('novell_social_links_youtube')
+              );
+            }
+
+          ?>
+
+          <?php if ( count( $socials ) > 0 ) : ?>
+          <ul class="nav navbar-nav navbar-right nav-socials">
+            <?php foreach ( $socials as $social ) : ?>
+              <li>
+                <a href="<?php echo $social[ 'url' ]; ?>">
+                  <span class="<?php echo $social[ 'icon' ] ?>"></span>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
+        </div>
+
       </div><!-- /.container -->
     </nav><!-- /#navbar-main.navbar.navbar-default -->
 
   </div><!-- /#header -->
-
   <?php if ( ! is_home() ) : ?>
   <!-- #breadcrumb -->
   <div id="breadcrumb">

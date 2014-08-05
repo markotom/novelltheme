@@ -82,11 +82,15 @@ function novell_enqueue_assets() {
 
     // Register "Open Sans" webfont
     wp_register_style( 'novell_webfont', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,700,400,600' );
+    // Register Font Awesome styles
+    wp_register_style( 'novell_fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
     // Register main styles
     wp_register_style( 'novell_styles', sprintf( $asset_path, 'novell', 'css' ) );
 
     // Enqueue "Open Sans" webfont
     wp_enqueue_style( 'novell_webfont' );
+    // Enqueue Font Awesome styles
+    wp_enqueue_style( 'novell_fontawesome' );
     // Enqueue main styles
     wp_enqueue_style( 'novell_styles' );
 

@@ -150,16 +150,6 @@ function custom_theme_options() {
         'section' => 'home',
       ),
 
-      // Social Links
-      array(
-        'id' => 'novell_social_links',
-        'label' => __( 'Social Links', 'novell' ),
-        'desc' => __( 'Create and organize your social links', 'novell' ),
-        'std' => '',
-        'type' => 'social-links',
-        'section' => 'social-links'
-      ),
-
       array(
         'id'          => 'novell-layout-global',
         'label'       => __( 'Global layout', 'novell' ),
@@ -276,6 +266,46 @@ function custom_theme_options() {
         'desc' => __( 'Define the footer text', 'novell' ),
         'type' => 'textarea',
         'section' => 'footer'
+      ),
+
+      // Social Links (Facebook)
+      array(
+        'id' => 'novell_social_links_facebook',
+        'label' => __( 'Facebook', 'novell' ),
+        'desc' => __( 'Enter the full url of your Facebook', 'novell' ),
+        'std' => '',
+        'type' => 'text',
+        'section' => 'social-links'
+      ),
+
+      // Social Links (Twitter)
+      array(
+        'id' => 'novell_social_links_twitter',
+        'label' => __( 'Twitter', 'novell' ),
+        'desc' => __( 'Enter the full url of your Twitter', 'novell' ),
+        'std' => '',
+        'type' => 'text',
+        'section' => 'social-links'
+      ),
+
+      // Social Links (Google)
+      array(
+        'id' => 'novell_social_links_google',
+        'label' => __( 'Google+', 'novell' ),
+        'desc' => __( 'Enter the full url of your Google+', 'novell' ),
+        'std' => '',
+        'type' => 'text',
+        'section' => 'social-links'
+      ),
+
+      // Social Links (Youtube)
+      array(
+        'id' => 'novell_social_links_youtube',
+        'label' => __( 'Youtube', 'novell' ),
+        'desc' => __( 'Enter the full url of your channel', 'novell' ),
+        'std' => '',
+        'type' => 'text',
+        'section' => 'social-links'
       )
     )
 
@@ -330,31 +360,5 @@ function novell_get_column_layouts() {
   );
 
 }
-
-// Default social links
-add_action( 'ot_type_social_links_defaults', function () {
-  return array(
-    array(
-        'name'    => __( 'Facebook', 'option-tree' ),
-        'title'   => '',
-        'href'    => ''
-    ),
-    array(
-      'name'    => __( 'Twitter', 'option-tree' ),
-      'title'   => '',
-      'href'    => ''
-    ),
-    array(
-      'name'    => __( 'Google+', 'option-tree' ),
-      'title'   => '',
-      'href'    => ''
-    ),
-    array(
-      'name'    => __( 'Youtube', 'option-tree' ),
-      'title'   => '',
-      'href'    => ''
-    )
-  );
-});
 
 ?>

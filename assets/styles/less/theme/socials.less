@@ -1,0 +1,26 @@
+//
+// Socials
+// --------------------------------------------------
+
+.nav-socials {
+  border-top: 1px solid @gray-dark;
+  font-size: 130%;
+
+  > li {
+    display: table-cell;
+    width: 1%;
+    > a {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    border-top: 0;
+
+    > li {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
