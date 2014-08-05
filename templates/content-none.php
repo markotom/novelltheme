@@ -1,7 +1,4 @@
-<header class="page-header">
-  <h1 class="page-title"><?php _e( 'Nothing Found', 'novell' ); ?></h1>
-</header>
-
+<h1 class="page-title"><?php _e( 'Nothing Found', 'novell' ); ?></h1>
 <div class="page-content">
   <?php if ( is_search() ) : ?>
 
