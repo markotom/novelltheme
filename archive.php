@@ -32,6 +32,9 @@
       </h1><!-- /.page-title -->
 
       <?php
+
+          echo '<div class="post-loop">';
+
           // Start the loop
           while ( have_posts() ) : the_post();
 
@@ -39,6 +42,8 @@
             get_template_part( 'templates/content' );
 
           endwhile;
+
+          echo '</div>';
 
           novell_pagination();
 
