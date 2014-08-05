@@ -90,6 +90,10 @@ function custom_theme_options() {
         'title' => __( 'Layout', 'novell' )
       ),
       array(
+        'id' => 'footer',
+        'title' => __( 'Footer', 'novell' )
+      ),
+      array(
         'id' => 'social-links',
         'title' => __( 'Social links', 'novell' )
       )
@@ -263,6 +267,15 @@ function custom_theme_options() {
             'type'        => 'text'
           )
         )
+      ),
+
+      // Footer text
+      array(
+        'id' => 'novell_footer_text',
+        'label' => __( 'Footer text', 'novell' ),
+        'desc' => __( 'Define the footer text', 'novell' ),
+        'type' => 'textarea',
+        'section' => 'footer'
       )
     )
 
