@@ -164,6 +164,36 @@ function custom_theme_options() {
         'section' => 'home',
       ),
 
+      // Featured content
+      array(
+        'id'          => 'novell_featured_content',
+        'label'       => __( 'Featured content', 'novell' ),
+        'desc'        => __( 'Add featured content', 'novell' ),
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'home',
+        'settings'    => array(
+          array(
+            'id'          => 'description',
+            'label'       => __( 'Description', 'novell' ),
+            'std'         => '',
+            'type'        => 'text'
+          ),
+          array(
+            'id'          => 'url',
+            'label'       => __( 'Link', 'novell' ),
+            'std'         => '',
+            'type'        => 'text'
+          ),
+          array(
+            'id'          => 'text_link',
+            'label'       => __( 'Text Link', 'novell' ),
+            'std'         => '',
+            'type'        => 'text'
+          )
+        )
+      ),
+
       // Global layout
       array(
         'id'          => 'novell-layout-global',

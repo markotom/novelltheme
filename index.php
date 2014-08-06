@@ -15,6 +15,10 @@
           // Carousel
           get_template_part( 'templates/carousel' );
 
+          // Featured content
+          get_template_part( 'templates/featured' );
+
+
           if ( ot_get_option( 'novell_featured_category_show' ) !== 'off' ) :
 
             // Get featured category
