@@ -100,6 +100,18 @@ module.exports = function (grunt) {
           { src: ['option-tree/**/*'] }
         ]
       }
+    },
+
+    // Release task
+    release: {
+      options: {
+        commit: false,
+        push: false,
+        pushTags: false,
+        npm: false,
+        commitMessage: 'Release <%= version %>',
+        tagMessage: 'Version <%= version %>'
+      }
     }
 
   });
@@ -109,6 +121,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-release');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-phplint');
 
