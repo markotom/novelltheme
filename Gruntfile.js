@@ -3,6 +3,7 @@
 module.exports = function (grunt) {
 
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
     // Watch task
     watch: {
@@ -79,6 +80,26 @@ module.exports = function (grunt) {
           'git clone https://github.com/valendesigns/option-tree.git',
         ].join('&&')
       }
+    },
+
+    // Compress task
+    compress: {
+      theme: {
+        options: {
+          archive: '<%= pkg.name %>-<%= pkg.version %>.zip'
+        },
+        files: [
+          { src: ['*.php'] },
+          { src: ['style.css'] },
+          { src: ['screenshot.png'] },
+          { src: ['assets/images/**/*'] },
+          { src: ['built/**/*'] },
+          { src: ['includes/**/*'] },
+          { src: ['templates/**/*'] },
+          { src: ['languages/**/*'] },
+          { src: ['option-tree/**/*'] }
+        ]
+      }
     }
 
   });
@@ -87,11 +108,20 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-phplint');
 
   // Build task
   grunt.registerTask('build', ['shell:optiontree']);
+
+  // Theme task (get wordpress theme)
+  grunt.registerTask('theme', [
+    'build',
+    'less:production',
+    'uglify:production',
+    'compress:theme'
+  ]);
 
   // Default task
   grunt.registerTask('default', 'build');
