@@ -34,7 +34,7 @@
   <div id="footer">
     <!-- .container -->
     <div class="container">
-      <?php if ( ot_get_option( 'novell_footer_text' ) ) : ?>
+      <?php if ( ot_get_option( 'novell_footer_text_show' ) !== 'off' ) : ?>
         <?php echo ot_get_option( 'novell_footer_text' ); ?>
       <?php else : ?>
         <?php echo date( 'Y' ); ?> @ <?php bloginfo( 'sitename' ); ?>.

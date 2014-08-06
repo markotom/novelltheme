@@ -15,34 +15,43 @@
           // Carousel
           get_template_part( 'templates/carousel' );
 
-          // Get featured category
-          query_posts( 'cat=' . ot_get_option( 'novell_featured_category' ) );
+          if ( ot_get_option( 'novell_featured_category_show' ) !== 'off' ) :
+
+            // Get featured category
+            query_posts( 'cat=' . ot_get_option( 'novell_featured_category' ) );
+
+          endif;
 
         endif;
 
 
-        if ( have_posts() ) :
+        if ( ! is_home() && ot_get_option( 'novell_show_posts' ) !== 'off' ) :
 
-          echo '<div class="post-loop">';
+          if ( have_posts() ) :
 
-          // Start the loop
-          while ( have_posts() ) : the_post();
+            echo '<div class="post-loop">';
 
-            // Get template content
-            get_template_part( 'templates/content' );
+            // Start the loop
+            while ( have_posts() ) : the_post();
 
-          endwhile;
+              // Get template content
+              get_template_part( 'templates/content' );
 
-          echo '</div>';
+            endwhile;
 
-          novell_pagination();
+            echo '</div>';
 
-        else :
+            novell_pagination();
 
-          // Get "No post found" template
-          get_template_part( 'templates/content', 'none' );
+          else :
+
+            // Get "No post found" template
+            get_template_part( 'templates/content', 'none' );
+
+          endif;
 
         endif;
+
       ?>
     </div><!-- /.content -->
 

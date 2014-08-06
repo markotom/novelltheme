@@ -74,10 +74,6 @@ function custom_theme_options() {
         'title' => __( 'General', 'novell' )
       ),
       array(
-        'id' => 'blog',
-        'title' => __( 'Blog', 'novell' )
-      ),
-      array(
         'id' => 'home',
         'title' => __( 'Home', 'novell' )
       ),
@@ -137,8 +133,26 @@ function custom_theme_options() {
         'desc' => __( 'Set max number of words', 'novell' ),
         'std' => '55',
         'type' => 'numeric-slider',
-        'section' => 'blog',
+        'section' => 'general',
         'min_max_step' => '0,100,1'
+      ),
+
+      // Show posts in home
+      array(
+        'id'          => 'novell_show_posts',
+        'label'       => __( 'Show posts in home', 'novell' ),
+        'std'         => 'on',
+        'type'        => 'on-off',
+        'section'     => 'home',
+      ),
+
+      // Show featured category
+      array(
+        'id'          => 'novell_featured_category_show',
+        'label'       => __( 'Show featured category', 'novell' ),
+        'std'         => 'off',
+        'type'        => 'on-off',
+        'section'     => 'home',
       ),
 
       // Featured Category
@@ -150,6 +164,7 @@ function custom_theme_options() {
         'section' => 'home',
       ),
 
+      // Global layout
       array(
         'id'          => 'novell-layout-global',
         'label'       => __( 'Global layout', 'novell' ),
@@ -160,6 +175,7 @@ function custom_theme_options() {
         'choices'     => $global_column_layouts
       ),
 
+      // Home layout
       array(
         'id'          => 'novell-layout-home',
         'label'       => __( 'Home', 'novell' ),
@@ -170,6 +186,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Single layout
       array(
         'id'          => 'novell-layout-single',
         'label'       => __( 'Single', 'novell' ),
@@ -180,6 +197,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Page layout
       array(
         'id'          => 'novell-layout-page',
         'label'       => __( 'Page', 'novell' ),
@@ -190,6 +208,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Archive layout
       array(
         'id'          => 'novell-layout-archive',
         'label'       => __( 'Archive', 'novell' ),
@@ -200,6 +219,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Category layout
       array(
         'id'          => 'novell-layout-category',
         'label'       => __( 'Category', 'novell' ),
@@ -210,6 +230,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Search layout
       array(
         'id'          => 'novell-layout-search',
         'label'       => __( 'Search', 'novell' ),
@@ -220,6 +241,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Error 404 layout
       array(
         'id'          => 'novell-layout-404',
         'label'       => __( 'Error 404', 'novell' ),
@@ -230,6 +252,7 @@ function custom_theme_options() {
         'choices'     => $column_layouts
       ),
 
+      // Carousel slides
       array(
         'id'          => 'novell_carousel_slides',
         'label'       => __( 'Slides', 'novell' ),
@@ -257,6 +280,15 @@ function custom_theme_options() {
             'type'        => 'text'
           )
         )
+      ),
+
+      // Show footer text
+      array(
+        'id'          => 'novell_footer_text_show',
+        'label'       => __( 'Show footer text', 'novell' ),
+        'std'         => 'off',
+        'type'        => 'on-off',
+        'section'     => 'footer',
       ),
 
       // Footer text
