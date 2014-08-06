@@ -1,6 +1,6 @@
 <?php $featured_contents = ot_get_option( 'novell_featured_content' ); ?>
 
-<?php if ( count( $featured_contents ) > 0 ) : ?>
+<?php if ( is_array( $featured_contents ) && count( $featured_contents ) > 0 ) : ?>
 
 <!-- .row -->
 <div class="row">

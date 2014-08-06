@@ -11,16 +11,12 @@
 
 // Because .sidebar is shown if screen is greater than breakpoint
 @media (min-width: @grid-float-breakpoint) {
-
-  .widget + .widget {
-    margin-top: @line-height-computed;
-  }
-
   .widget {
     .clearfix;
     #gradient > .vertical(lighten(@gray-lighter, 5%), lighten(@gray-lighter, 3%));
 
     padding: @line-height-computed / 2;
+    margin-bottom: @line-height-computed;
     border-radius: @border-radius-base;
     border: 1px solid @well-border;
   }
