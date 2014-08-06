@@ -63,7 +63,10 @@ module.exports = function (grunt) {
     uglify: {
       production: {
         files: {
-          'built/js/novell.min.js': 'assets/scripts/novell.js'
+          'built/js/novell.min.js': [
+            'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            'assets/scripts/novell.js'
+          ]
         }
       }
     },

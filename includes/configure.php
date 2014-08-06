@@ -94,13 +94,9 @@ function novell_enqueue_assets() {
     // Enqueue main styles
     wp_enqueue_style( 'novell_styles' );
 
-    // Register bootstrap scripts
-    wp_register_script( 'bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), false, true );
     // Register novell scripts
-    wp_register_script( 'novell_scripts', sprintf( $asset_path, 'novell.min', 'js' ) );
+    wp_register_script( 'novell_scripts', sprintf( $asset_path, 'novell.min', 'js' ), array( 'jquery' ) );
 
-    // Enqueue bootstrap scripts
-    wp_enqueue_script( 'bootstrap' );
     // Enqueue novell scripts
     wp_enqueue_script( 'novell_scripts' );
     // Enqueue comment scripts
