@@ -57,6 +57,7 @@
 
     </div><!-- /.container -->
 
+    <?php if ( has_nav_menu( 'main' ) ) : ?>
     <!-- #navbar-main.navbar.navbar-default -->
     <nav id="navbar-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <!-- .container -->
@@ -135,6 +136,7 @@
 
       </div><!-- /.container -->
     </nav><!-- /#navbar-main.navbar.navbar-default -->
+    <?php endif; ?>
 
   </div><!-- /#header -->
   <?php if ( ! is_home() ) : ?>
