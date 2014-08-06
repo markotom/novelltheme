@@ -53,7 +53,13 @@
 
       <?php endif ?>
 
-      <?php get_search_form(); ?>
+      <?php
+
+        if ( ot_get_option( 'novell_search_form' ) !== 'off' ) {
+          get_search_form();
+        }
+
+      ?>
 
     </div><!-- /.container -->
 

@@ -86,6 +86,10 @@ function custom_theme_options() {
         'title' => __( 'Layout', 'novell' )
       ),
       array(
+        'id' => 'header',
+        'title' => __( 'Header', 'novell' )
+      ),
+      array(
         'id' => 'footer',
         'title' => __( 'Footer', 'novell' )
       ),
@@ -310,6 +314,15 @@ function custom_theme_options() {
             'type'        => 'text'
           )
         )
+      ),
+
+      // Show search form
+      array(
+        'id'          => 'novell_search_form',
+        'label'       => __( 'Show search form', 'novell' ),
+        'std'         => 'on',
+        'type'        => 'on-off',
+        'section'     => 'header',
       ),
 
       // Show footer text
