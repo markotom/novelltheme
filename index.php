@@ -18,18 +18,25 @@
           // Featured content
           get_template_part( 'templates/featured' );
 
+        endif;
 
-          if ( ot_get_option( 'novell_featured_category_show' ) !== 'off' ) :
+        wp_reset_query();
 
-            // Get featured category
-            query_posts( 'cat=' . ot_get_option( 'novell_featured_category' ) );
+        // Show posts if is not home or if 'novell_show_posts' is on
+        if ( ! is_home() || ot_get_option( 'novell_show_posts' ) !== 'off' ) :
+
+          if ( is_home() ) :
+
+            // Show featured category
+            if ( ot_get_option( 'novell_featured_category_show' ) !== 'off' ) :
+
+              // Get featured category
+              query_posts( 'cat=' . ot_get_option( 'novell_featured_category' ) );
+
+            endif;
 
           endif;
 
-        endif;
-
-
-        if ( ! is_home() && ot_get_option( 'novell_show_posts' ) !== 'off' ) :
 
           if ( have_posts() ) :
 
