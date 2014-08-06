@@ -33,6 +33,8 @@ function novell_current_layout() {
 
     function novell_get_current_layout() {
 
+      wp_reset_query();
+
       if ( is_home() ) {
 
         // Set home layout name
