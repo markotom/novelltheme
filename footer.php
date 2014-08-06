@@ -9,6 +9,27 @@
 
   ?>
 
+  <?php if ( has_nav_menu( 'footer' ) ) : ?>
+  <!-- #navbar-footer.navbar.navbar-inverse.navbar-fixed-bottom -->
+  <nav id="navbar-footer" class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+      <?php
+
+        // Shows footer nav menu
+        wp_nav_menu(
+          array(
+            'depth'           => 3,
+            'theme_location'  => 'footer',
+            'menu_class'      => 'nav navbar-nav',
+            'container'       => false
+          )
+        );
+
+      ?>
+    </div>
+  </nav><!-- /#navbar-footer.navbar.navbar-inverse.navbar-fixed-bottom -->
+  <?php endif; ?>
+
   <!-- #footer -->
   <div id="footer">
     <!-- .container -->

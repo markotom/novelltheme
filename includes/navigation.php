@@ -16,6 +16,9 @@ function novell_register_nav_menus() {
   // Register nav main menu
   register_nav_menu( 'main', __( 'Main menu', 'novell' ) );
 
+  // Register nav footer menu
+  register_nav_menu( 'footer', __( 'Footer menu', 'novell' ) );
+
 }
 
 // Remove menu item id
