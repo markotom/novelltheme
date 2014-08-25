@@ -97,7 +97,8 @@ module.exports = function (grunt) {
           { src: ['includes/**/*'] },
           { src: ['templates/**/*'] },
           { src: ['languages/**/*'] },
-          { src: ['option-tree/**/*'] }
+          { src: ['option-tree/**/*'] },
+          { src: ['bower_components/bootstrap/fonts/*'] }
         ]
       }
     },
