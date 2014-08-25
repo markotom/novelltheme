@@ -11,6 +11,7 @@ Another Wordpress Theme
 * Fixed styles errors.
 * Fixed one carousel error of cropped images.
 * Added glyphicons to zip file.
+* Added wp_title filter
 
 ### 1.0.0-alpha.0
 
