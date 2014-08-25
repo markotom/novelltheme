@@ -18,8 +18,9 @@
     <?php
       $image_id  = wp_get_attachment_id_by_url( $slide[ 'image' ] );
       $slide_image = wp_get_attachment_image_src( $image_id, 'thumb-large' );
+      $image = ! $slide_image[0] ? $slide[ 'image' ] : $slide_image[0];
     ?>
-    <div class="item<?php echo $i === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $slide_image[ 0 ] ?>)">
+    <div class="item<?php echo $i === 0 ? ' active' : '' ?>" style="background-image: url(<?php echo $image ?>)">
       <div class="carousel-caption">
         <?php if ( $slide[ 'title' ] ) : ?>
         <h4>
