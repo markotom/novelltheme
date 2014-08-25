@@ -2,7 +2,7 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
   <!-- Wordpress titles -->
-  <title><?php wp_title( '' ); ?></title>
+  <title><?php wp_title( '|', true, 'right' ); ?></title>
 
   <!-- Set encoding -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
